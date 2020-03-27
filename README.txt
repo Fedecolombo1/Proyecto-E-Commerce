@@ -1,2 +1,2 @@
-Desarolladores: Tom, Fede, Ruben
+Desarolladores: Tom, Fede, Ruben, Marco
 Rubro: Tienda de marca de ropa
