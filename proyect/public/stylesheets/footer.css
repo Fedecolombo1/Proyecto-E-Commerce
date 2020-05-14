@@ -1,0 +1,17 @@
+
+footer.container {
+    background-color: #dfe4ea;
+    border-top: black solid 1px;
+    height: 15%;
+}
+div.row{
+    display: flex;
+    justify-content: center;
+}
+div.col-6{
+    text-align: center
+}
+.email{
+    font-size: 15px;
+    margin-bottom: 0px;
+}
