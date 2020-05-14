@@ -1,3 +1,6 @@
+main {
+    background-color: #f1f2f6;
+}
 header {
     border-bottom: 1px solid black;
     margin-bottom: 20px;
@@ -14,11 +17,6 @@ h3.m {
 section.products {
     display: flex;
     flex-wrap: wrap;
-}
-
-article.col-6 {
-    display: flex;
-    justify-content: center;
 }
 
 img {
