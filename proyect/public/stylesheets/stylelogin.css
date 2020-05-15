@@ -8,17 +8,20 @@ body{
 
 }
 
-.login-box{
+.login-container{
     width: 280px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
-.login-box h1{
+.login-container h1{
     float: left;
     font-size: 40px;
     border-bottom: 7px solid #EA2027;
@@ -53,6 +56,13 @@ body{
     width: 80%;
     float: left;
     margin: 0 10px;
+    
+}
+
+.forgot-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .btn{

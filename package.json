@@ -1,0 +1,24 @@
+{
+  "name": "Proyecto-E-Commerce",
+  "version": "1.0.0",
+  "description": "Desarolladores: Tom, Fede, Ruben Rubro: Tienda de marca de ropa",
+  "main": "index.js",
+  "dependencies": {
+    "npm-start-command": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fedecolombo1/Proyecto-E-Commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fedecolombo1/Proyecto-E-Commerce/issues"
+  },
+  "homepage": "https://github.com/Fedecolombo1/Proyecto-E-Commerce#readme"
+}
