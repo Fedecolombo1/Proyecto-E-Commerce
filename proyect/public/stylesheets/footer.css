@@ -1,8 +1,9 @@
 
 footer.container-fluid {
-    background-color: #a4b0be;
+    background-color: #2d3436;
     border-top: black solid 1px;
     height: 15%;
+    margin-top: 30px;
 }
 div.row{
     display: flex;
@@ -14,4 +15,10 @@ div.col-6{
 .email{
     font-size: 15px;
     margin-bottom: 0px;
+}
+i.footer {
+    color: white
+}
+p.footer {
+    color:white
 }
