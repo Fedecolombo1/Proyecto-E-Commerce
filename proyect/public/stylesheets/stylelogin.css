@@ -18,6 +18,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 }
 
@@ -75,4 +76,14 @@ body{
     margin: 12px 0;
 
 
+}
+
+.foot-position {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #dfe4ea;
+  text-align: center;
 }

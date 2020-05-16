@@ -3,6 +3,7 @@ footer.container-fluid {
     background-color: #a4b0be;
     border-top: black solid 1px;
     height: 15%;
+    width: 100%;
 }
 div.row{
     display: flex;
