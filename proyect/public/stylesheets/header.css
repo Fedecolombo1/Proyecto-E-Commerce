@@ -129,6 +129,9 @@ p.col-12.desc.n {
     
     .nav {
         margin-bottom: 20px;
+        border: 1px solid #ced6e0;
+        border-left: 0px;
+        border-right: 0px;
     }
     a.sec {
         display: flex;
@@ -140,5 +143,18 @@ p.col-12.desc.n {
     }
     a.sec:hover {
         text-decoration: underline #EA2027 ;
+    }
+    .banner {
+        background-color: red;
+        text-align: center;
+        margin-bottom: 20px;
+        height: 170px;
+    }
+    .nuestrosProd {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ced6e0;
     }
 }
