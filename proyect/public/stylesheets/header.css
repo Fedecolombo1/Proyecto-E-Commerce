@@ -80,6 +80,14 @@ p.col-12.desc.n {
 .p {
     color: grey;
 }
+a.art {
+    color: black;
+}
+a.art:hover {
+    color: rgb(223, 82, 0);
+    text-decoration: none;
+    padding-top: 15px;
+}
 @media(min-width: 1024px){
     .fa-bars {
         display: none;
