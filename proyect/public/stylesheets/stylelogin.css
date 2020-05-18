@@ -8,21 +8,8 @@ body{
 
 }
 
-.login-container{
-    width: 280px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 
-}
-
-.login-container h1{
+.login-box h1{
     float: left;
     font-size: 40px;
     border-bottom: 7px solid #EA2027;
@@ -78,12 +65,3 @@ body{
 
 }
 
-.foot-position {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #dfe4ea;
-  text-align: center;
-}
