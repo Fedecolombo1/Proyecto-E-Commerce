@@ -5,11 +5,13 @@ main {
     background-color: #f1f2f6;
     padding-top: 20px;
     height: 65%;
+    width: 100%;
 }
 header {
     border-bottom: 1px solid black;
     background-color: #dfe4ea;
     height: 20%;
+    width: 100%;
 }
 
 div.row.align-items-center{
@@ -57,7 +59,7 @@ article.col-6 {
     display: none;
 }
 
-div.row.col-10.desk {
+div.row.col-9.desk {
     display: none;
 }
 
@@ -68,7 +70,24 @@ a.title {
 a.title:hover {
     text-decoration: underline #EA2027;
 }
-
+.desc {
+    margin: 0px;
+    font-size: 13px;
+}
+p.col-12.desc.n {
+    font-weight: 600;
+}
+.p {
+    color: grey;
+}
+a.art {
+    color: black;
+}
+a.art:hover {
+    color: rgb(223, 82, 0);
+    text-decoration: none;
+    padding-top: 15px;
+}
 @media(min-width: 1024px){
     .fa-bars {
         display: none;
@@ -93,7 +112,7 @@ a.title:hover {
     .desk{
         display: inline-block;
     }
-    div.row.col-10.desk {
+    div.row.col-9.desk {
         display: flex;
     }
     input.desk{
@@ -118,6 +137,9 @@ a.title:hover {
     
     .nav {
         margin-bottom: 20px;
+        border: 1px solid #ced6e0;
+        border-left: 0px;
+        border-right: 0px;
     }
     a.sec {
         display: flex;
@@ -129,5 +151,18 @@ a.title:hover {
     }
     a.sec:hover {
         text-decoration: underline #EA2027 ;
+    }
+    .banner {
+        background-color: red;
+        text-align: center;
+        margin-bottom: 20px;
+        height: 170px;
+    }
+    .nuestrosProd {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ced6e0;
     }
 }
