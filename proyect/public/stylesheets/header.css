@@ -150,10 +150,10 @@ a.art:hover {
         color: black;
     }
     a.sec:hover {
-        text-decoration: underline #EA2027 ;
+        text-decoration: underline #EA2027;
     }
     .banner {
-        background-color: red;
+        background-color: #EA2027;
         text-align: center;
         margin-bottom: 20px;
         height: 170px;
@@ -164,5 +164,6 @@ a.art:hover {
         margin-bottom: 20px;
         text-align: center;
         border-bottom: 1px solid #ced6e0;
+        margin-top: 20px;
     }
 }
