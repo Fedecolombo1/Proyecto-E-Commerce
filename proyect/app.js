@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//app.use de rutas
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/product', productRouter);
-
 
 
 // catch 404 and forward to error handler
