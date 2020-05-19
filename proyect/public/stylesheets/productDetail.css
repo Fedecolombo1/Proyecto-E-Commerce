@@ -53,7 +53,7 @@ div.row.botones {
 .mobile {
     display: flex;
 }
-button {
+button.a {
     font-size: 12px;
 }
 @media(min-width: 1024px){
