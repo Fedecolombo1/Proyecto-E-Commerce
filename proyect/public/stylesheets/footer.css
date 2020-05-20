@@ -1,10 +1,13 @@
 
 footer.container-fluid {
+    position: absolute;
+    bottom: 0;
     background-color: #2d3436;
     border-top: black solid 1px;
     height: 15%;
     width: 100%;
     margin-top: 30px;
+    
 }
 div.row{
     display: flex;
