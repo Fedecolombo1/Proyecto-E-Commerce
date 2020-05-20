@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Mi carrito</title>
+    <link rel='stylesheet' href='/stylesheets/header.css'>
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+    <link rel="stylesheet" href="/stylesheets/productCart.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/882d6fd4b6.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div><%- include('partials/header.ejs') %></div>
+
+    <div><button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button></div>
+    
+    
+    <div class="pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+    
+              
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="p-2 px-3 text-uppercase">Producto</div>
+                      </th>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Cantidad</div>
+                      </th>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Precio</div>
+                      </th>
+                      
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Total</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="border-0">
+                        <div class="p-2">
+                          <img src="https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">FRESH "BASIC" LOGO</a></h5><span class="text-muted font-weight-normal font-italic d-block">Sudadera negra talla M</span>
+                          </div>
+                        </div>
+                      </th>
+                      
+                      <td class="border-0 align-middle"><strong>2</strong></td>
+                      <td class="border-0 align-middle"><strong>$2.500</strong></td>
+                      <td class="border-0 align-middle"><strong>$5.000</strong></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="p-2">
+                          <img src="https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">MUERTE EN EL AGUA T-SHIRT</a></h5><span class="text-muted font-weight-normal font-italic">Camiseta negra talla M</span>
+                          </div>
+                        </div>
+                      </th>
+                      
+                      <td class="align-middle"><strong>3</strong></td>
+                      <td class="align-middle"><strong>$1.800</strong></td>
+                      <td class="align-middle"><strong>$5.400</strong></td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="p-2">
+                          <img src="https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">"96" ORANGE DROP</a></h5><span class="text-muted font-weight-normal font-italic">Sudadera naranja talla M</span>
+                          </div>
+                        </div>
+                        
+                        <td class="align-middle"><strong>1</strong></td>
+                        <td class="align-middle"><strong>$2.500</strong></td>
+                        <td class="align-middle"><strong>$2.500</strong></td>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+              
+
+            </div>
+          </div>
+          <div><button type="button" class="col-4 btn">Pagar  <i class="fa fa-arrow-circle-right"></i></button></div>
+
+          <%- include('partials/footer.ejs') %> 
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
