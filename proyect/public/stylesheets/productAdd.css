@@ -1,10 +1,68 @@
-div.container{
-    padding-top: 20px;
-    height: 65%;
-}
-h4.text-center {
-    text-align: center;
-    font-family:  Black, sans-serif;
-    margin-bottom: 0px;
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+body{
+  margin: 0;
+  padding: 0;  
+  font-family: sans-serif ;
+  background-color: #f1f2f6;
+
 }
 
+h5{
+    font-size: 40px;
+    color: black;
+       
+}
+
+
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid #EA2027;
+
+}
+
+.textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+
+}
+
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+    
+}
+
+.forgot-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 100%;
+    background: none;
+    border: 2px solid #EA2027;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    margin: 12px 0;
+
+
+}
+
+.btn:hover {
+    background-color: #EA2027;
+    color: white;
+}
