@@ -19,37 +19,35 @@
 
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-0">
-        </div> 
         <div class="col-7">
             <h4 class="text-center"><strong>Añadir Producto</strong></h4>
             <form name="formulario" novalidate>
-            <div class="form-group">
-              <label for="nombre">Nombre del Producto:</label>
-              <input autocomplete="off" required id="nombre" placeholder="Escribe el nombre del producto" type="text" class="form-control" ng-model="producto.nombre" />
-            </div>
-            <div class="form-group">
-              <label for="articulo">Articulo del Producto:</label>
-              <input autocomplete="off" required id="marca" placeholder="Escribe la marca del producto" type="text" class="form-control" ng-model="producto.marca" />
-            </div>
-            <div class="form-group">
-              <label for="precio">Precio:</label>
-              <input autocomplete="off" required id="precio" placeholder="Escribe el precio del producto" type="number" class="form-control" ng-model="producto.precio" />
-            </div>
-                       
-            <div class="form-group">
-              <label for="descripcion">Descipcion del Producto:</label>
-              <textarea name="descripcion" id="" cols="40" rows="8" autocomplete="off" required id="descripcion" placeholder="Escribe la descripcion del producto" type="text" class="form-control" ng-model="producto.descripcion" ></textarea>
-            </div>
-            <div class="form-group">
-              <label for="imagen">Imagen del Producto:</label>
-              <input type="file" id="imagen"/>
-            </div>
-          
-            <button type="button" ng-show="formulario.$valid" ng-click="agregar_producto(producto)" class="btn btn-success form-control">Agregar producto</button>  
-          </form>
+              <div class="form-group">
+                <label for="nombre">Nombre del Producto:</label>
+                <input autocomplete="off" required id="nombre" placeholder="Escribe el nombre del producto" type="text" class="form-control" ng-model="producto.nombre" />
+              </div>
+              <div class="form-group">
+                <label for="articulo">Articulo del Producto:</label>
+                <input autocomplete="off" required id="marca" placeholder="Escribe la marca del producto" type="text" class="form-control" ng-model="producto.marca" />
+              </div>
+              <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input autocomplete="off" required id="precio" placeholder="Escribe el precio del producto" type="number" class="form-control" ng-model="producto.precio" />
+              </div>
+                        
+              <div class="form-group">
+                <label for="descripcion">Descipcion del Producto:</label>
+                <textarea name="descripcion" id="" cols="40" rows="8" autocomplete="off" required id="descripcion" placeholder="Escribe la descripcion del producto" type="text" class="form-control" ng-model="producto.descripcion" ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="imagen">Imagen del Producto:</label>
+                <input type="file" id="imagen"/>
+              </div>
+            
+              <button type="button" ng-show="formulario.$valid" ng-click="agregar_producto(producto)" class="btn btn-success form-control">Agregar producto</button>  
+            </form>
         </div>
-        <%- include('partials/footer.ejs') %>
+        <%- include('partials/footerlogyreg.ejs') %>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

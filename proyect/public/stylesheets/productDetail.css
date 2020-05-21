@@ -57,8 +57,38 @@ div.row.botones {
     display: flex;
 }
 button.a {
-    font-size: 12px;
+    font-size: 15px;
+    width: 100%;
+    background-color: #EA2027;
+    border: 2px solid #EA2027;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    margin: 12px 0;
+    border-radius: 8px;
 }
+.talle{
+    display: flex;
+    justify-content: center;
+    border: 2px solid #bdc4cc;
+    border-color: #EA2027;
+    border-radius: 14px;
+}
+.talle:hover {
+    background-color: #EA2027;
+    color: white;
+    border-color: #EA2027
+}
+div.row.talles {
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.elegir {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 @media(min-width: 1024px){
     div.row.f {
         display: flex;
@@ -97,5 +127,8 @@ button.a {
     .precio {
         border-top: 1px solid #ced6e0;
         text-align: center;
+    }
+    .elegir {
+        margin-top: 0px;
     }
 }
