@@ -9,12 +9,13 @@ body{
 }
 
 
-.login-box h1{
+.container-fluid h1{
     float: left;
     font-size: 40px;
     border-bottom: 7px solid #EA2027;
     margin-bottom: 50px;
     padding: 13px 0;
+    
 
 }
 
@@ -69,3 +70,15 @@ body{
     color: white;
 }
 
+
+.notMember{
+    text-align: center;
+}
+
+
+
+@media (min-width: 768px){
+   .table{
+    margin-top: 11vh;
+   }
+}

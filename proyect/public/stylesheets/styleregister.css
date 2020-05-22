@@ -9,14 +9,15 @@ body{
 }
 
 
-h5{
+.container-fluid h1{
     float: left;
-    font-size: 35px;
-    color: black;
-    border-bottom: 4px solid #EA2027;
-       
-}
+    font-size: 40px;
+    border-bottom: 7px solid #EA2027;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
 
+}
 
 .textbox{
     width: 100%;
@@ -62,10 +63,26 @@ h5{
     cursor: pointer;
     margin: 12px 0;
 
-
 }
 
 .btn:hover {
     background-color: #EA2027;
     color: white;
 }
+
+.birthdate{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 425px){
+    .
+    .table{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .container-fluid h1{
+        font-size: 25px;
+        border-bottom: 3px solid #EA2027;
+    }
+ }

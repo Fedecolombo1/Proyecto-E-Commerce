@@ -1,7 +1,18 @@
 
-footer.container-fluid {
+@media (min-width: 425px){footer.container-fluid {
     position: absolute;
     bottom: 0;
+    background-color: #2d3436;
+    border-top: black solid 1px;
+    height: 15%;
+    width: 100%;
+    margin-top: 30px;
+    
+}}
+
+footer.container-fluid {
+    
+    
     background-color: #2d3436;
     border-top: black solid 1px;
     height: 15%;
@@ -26,3 +37,4 @@ i.footer {
 p.footer {
     color:white
 }
+
