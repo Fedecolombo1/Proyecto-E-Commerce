@@ -13,7 +13,7 @@ body{
     float: left;
     font-size: 40px;
     border-bottom: 7px solid #EA2027;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 20px;
     
 
@@ -76,7 +76,7 @@ body{
 }
 
 @media (max-width: 425px){
-    .
+    
     .table{
         margin-top: 0;
         margin-bottom: 0;

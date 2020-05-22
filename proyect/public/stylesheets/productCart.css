@@ -3,7 +3,7 @@ body{
   
   }
 
-  .btn{
+  button.btn{
     width: 100%;
     background: none;
     border: 2px solid #EA2027;
@@ -15,7 +15,7 @@ body{
 
 }
 
-.btn:hover {
+button.btn:hover {
     background-color: #EA2027;
     color: white;
 }
@@ -25,4 +25,8 @@ body{
     height: 20%;
     width: 20%;
   }
+}
+
+.buttonfix{
+  width: 100%;
 }

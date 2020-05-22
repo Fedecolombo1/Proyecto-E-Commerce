@@ -54,7 +54,7 @@ body{
     justify-content: space-between;
 }
 
-.btn{
+input.btn{
     width: 100%;
     background: none;
     border: 2px solid #EA2027;
@@ -65,7 +65,7 @@ body{
 
 }
 
-.btn:hover {
+input.btn:hover {
     background-color: #EA2027;
     color: white;
 }

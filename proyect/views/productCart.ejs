@@ -15,7 +15,9 @@
 <body>
     <div><%- include('partials/header.ejs') %></div>
 
-    <div><button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button></div>
+    <div style=" margin-left: 2%;">
+      <button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button>
+    </div>
     
     
     <div class="pb-5">
@@ -94,12 +96,18 @@
             </div>
               
 
+            <tr>
+              <td class= 'colspan=6 align-right'>Total</td>
+              <td class="total" colspan="2"><b>$ 163.47</b>
+              </td>
+          </tr>
+
 
 
             </div>
           </div>
     </div>
-          <div><button type="button" class="col-4 btn">Pagar  <i class="fa fa-arrow-circle-right"></i></button></div>
+          <div class="buttonfix row justify-content-end" style="width-100%"><button type="button" class="col-4 btn">Pagar  <i class="fa fa-arrow-circle-right"></i></button></div>
 
           <%- include('partials/footer.ejs') %> 
 </body>
