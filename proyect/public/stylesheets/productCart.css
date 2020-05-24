@@ -30,3 +30,14 @@ button.btn:hover {
 .buttonfix{
   width: 100%;
 }
+
+.cantidadNumerico{
+  height: 22%;
+  width: 24%;
+  background: white;
+}
+
+
+.subtitulo{
+color: rgb(223, 82, 0);
+}

@@ -15,19 +15,20 @@
 <body>
     <div> <%- include('partials/header.ejs') %></div>
 
-    <div style=" margin-left: 2%;">
+    <div style=" margin-left: 2%;" class="pt-3">
       <button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button>
     </div>
     
     
-    <div class="pb-5">
+    <div class="pb-1 pt-3">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
     
               
-              <div class="table-responsive">
+              <div class="table-responsive table-hover">
                 <table class="table">
+
                   <thead>
                     <tr>
                       <th scope="col" class="border-0 bg-light">
@@ -39,28 +40,36 @@
                       <th scope="col" class="border-0 bg-light">
                         <div class="py-2 text-uppercase">Precio</div>
                       </th>
-                      
                       <th scope="col" class="border-0 bg-light">
                         <div class="py-2 text-uppercase">Total</div>
                       </th>
                     </tr>
                   </thead>
+
+
                   <tbody>
+
                     <tr>
                       <th scope="row" class="border-0">
                         <div class="p-2">
                           <img class="img" src="https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
                           <div class="ml-3 d-inline-block align-middle">
-                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">"96" BLACK DROP</a></h5><span class="text-muted font-weight-normal font-italic d-block">Sudadera negra talla M</span>
+                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">"96" BLACK DROP</a></h5><span class="subtitulo text-muted font-weight-normal font-italic d-block ">Sudadera negra talla M</span>
                           </div>
                         </div>
                       </th>
-                      <td class="border-0 align-middle product-quantity">
-                        <input type="number" value="2" min="1">
+
+
+                      <td class="border-0  align-middle product-quantity">
+                        <input class="cantidadNumerico"type="number" value="2" min="1">
                       </td>
                       <td class="border-0 align-middle"><strong>$2.500</strong></td>
                       <td class="border-0 align-middle"><strong>$5.000</strong></td>
                     </tr>
+
+
+
+
                     <tr>
                       <th scope="row">
                         <div class="p-2">
@@ -70,12 +79,23 @@
                           </div>
                         </div>
                       </th>
+
+
+
                       
-                      <td class="align-middle"><strong>3</strong></td>
+                      <td class="align-middle product-quantity">
+                        <input class="cantidadNumerico"type="number" value="3" min="1">
+                      </td>
                       <td class="align-middle"><strong>$1.800</strong></td>
                       <td class="align-middle"><strong>$5.400</strong></td>
                       </td>
                     </tr>
+
+
+
+
+
+
                     <tr>
                       <th scope="row">
                         <div class="p-2">
@@ -85,29 +105,43 @@
                           </div>
                         </div>
                         
-                        <td class="align-middle"><strong>1</strong></td>
+                        <td class="align-middle product-quantity">
+                          <div> <input class="cantidadNumerico"type="number" value="1" min="1"> </div>
+                          
+                        </td>
                         <td class="align-middle"><strong>$2.500</strong></td>
                         <td class="align-middle"><strong>$2.500</strong></td>
                         </td>
                     </tr>
+
+                    
+                    
+                    
+                  <tr >
+                    
+                      <td colspan="4" class="border-0 bg-light position-right ">Total <b>$ 11.400</b>
+                      </td>
+                  </tr>
+
+
+
                   </tbody>
+
+
+
                 </table>
               </div>
             </div>
               
 
-            <tr>
-              <td class= 'colspan=6 align-right'>Total</td>
-              <td class="total" colspan="2"><b>$ 163.47</b>
-              </td>
-          </tr>
+            
 
 
 
             </div>
           </div>
     </div>
-          <div class="buttonfix row justify-content-end" style="width-100%"><button type="button" class="col-4 btn">Pagar  <i class="fa fa-arrow-circle-right"></i></button></div>
+          <div class="buttonfix row justify-content-end" style="width: 100%;"><button type="button" class="col-4 btn">Pagar  <i class="fa fa-arrow-circle-right"></i></button></div>
 
           <%- include('partials/footer.ejs') %> 
 </body>
