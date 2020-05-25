@@ -1,7 +1,8 @@
-.desc {
+h6.desc {
     align-items: center;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
+    margin: 10px 0 5px 0
 }
 .nombreProd {
     color: rgb(219, 99, 0);
@@ -99,7 +100,7 @@ div.row.talles {
     }
     .nombreProd {
         justify-content: center;
-        margin-bottom: -40px;
+        margin-bottom: -11px;
         margin-top: 20px;
     }
     .mobile {
@@ -130,5 +131,8 @@ div.row.talles {
     }
     .elegir {
         margin-top: 0px;
+    }
+    h6.desc {
+        margin-top: 10px;
     }
 }
