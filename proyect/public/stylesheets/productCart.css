@@ -33,8 +33,9 @@ button.btn:hover {
 
 .cantidadNumerico{
   height: 22%;
-  width: 24%;
+  width: 27%;
   background: white;
+  border: 0;
 }
 
 

@@ -13,8 +13,8 @@ body{
     float: left;
     font-size: 40px;
     border-bottom: 7px solid #EA2027;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+   
     
 
 }
@@ -30,7 +30,7 @@ body{
 }
 
 .textbox i{
-    width: 26px;
+    width: px;
     float: left;
     text-align: center;
 
@@ -71,8 +71,9 @@ body{
 }
 
 .birthdate{
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
+    font-family: inherit;
 }
 
 @media (max-width: 425px){

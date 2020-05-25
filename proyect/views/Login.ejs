@@ -4,55 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh | Log-in</title>
-    <link rel="stylesheet" href="/stylesheets/stylelogin.css">
     <link rel='stylesheet' href='/stylesheets/header.css'>
     <link rel='stylesheet' href='/stylesheets/footer.css'>
+    <link rel="stylesheet" href="/stylesheets/stylelogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/882d6fd4b6.js" crossorigin="anonymous"></script>
+
+
 </head>
+
 <body>
-    <div><%- include('partials/header.ejs') %></div>
-    
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 colx-xs-12 table"> 
-                
-                     <h1>Log-in</h1>
+   <div> <%- include('partials/header.ejs') %> </div>
+ 
+
+<div class="pb-1 pt-3">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 p-5 bg-#f1f2f6 rounded shadow-regular mb-5">
+
+
+<form action="">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-12 table"> 
+<div class="form-responsive">             
+        <h1>Log-in</h1>
                      
-                     <div class="textbox">
+                    <div class="textbox">
                         <i class="fas fa-at"></i>
                          <input type="email" placeholder="Correo Electronico" name="" value="">
-                     </div>
-                     <div class="textbox">
+                    </div>
+
+                
+                     
+                    <div class="textbox">
                      <i class="fa fa-lock" aria-hidden="true"></i>
                          <input type="password" placeholder="Contraseña" name="" value="">
-                     </div>
-                      <div class='forgot-link'>
+                    </div>
+
+                
+
+                    <div class='forgot-link'>
                           <div class="form-check">
                              <input type="checkbox" class="form-check-input" id="remember">
                              <label for="remember">Recuerda Usuario</label>
                           </div>
-                      </div>  
+                    </div>  
                  
-                      <div>
+                    <br>
+                  
+                    <div>
                         <input type="button" class="btn" name="" value="Log-in">
-                     </div>
-                     <div>
-                         <p class="notMember"> ¿No sos un miembro? <a href="/users/register"> Regístrate</a> </p> 
-                     </div> 
+                    </div>
+                   
+                    <br>
+                    
+                    <div>
+                         <p class="notMember"> ¿No sos un miembro? <a href="/users/register"> Regístrate</a></p> 
+                    </div> 
 
                     
-                     <div class="col-md-4 col-sm-4 colx-xs-12"></div>
-        </div>
-    </div> 
+
+</div>                   
+
+</div>                    
 </div> 
- 
-<%- include('partials/footerlogyreg.ejs') %>
+</div> 
+
+</form>
+
+
+</div>                   
+</div>                    
+</div> 
+</div>
+
+<%- include('partials/footer.ejs') %>
    
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>

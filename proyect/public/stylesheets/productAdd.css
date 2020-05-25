@@ -47,12 +47,6 @@ h5{
     
 }
 
-.forgot-link{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .btn{
     width: 100%;
     background: none;
