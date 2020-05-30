@@ -14,7 +14,19 @@ var controller = {
                 var product = products[i]
             }
         }
+        if(product == undefined){
+            res.render("error")
+        }
         res.render('productDetail',{product});
+    },
+    delete: function(req, res, next) {
+        console.log(products);
+        products = products.filter(product => product.id != req.params.id)
+
+        products = JSON.stringify(products);
+        fs.writeFileSync("./database/products.json", products);
+        
+        res.render("home")   
     }
 }
 

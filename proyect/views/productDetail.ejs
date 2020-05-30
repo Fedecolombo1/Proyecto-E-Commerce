@@ -69,6 +69,9 @@
                       </div>
                     </div>
                     <button class="col-12 a"><i class="fas fa-shopping-cart"></i>  Agregar al carrito</button>
+                    <form action="/products/delete/<%= product.id %>" method="POST">
+                    <button class="col-12 a" type="submit"><i class="fas fa-trash-alt"></i>  Borrar Producto</button>
+                    </form>
                   </div>
                 </div>
             </div>
