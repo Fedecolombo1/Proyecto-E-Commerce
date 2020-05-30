@@ -85,42 +85,17 @@
         </div>
         <div class="row">
           <section class="products">
+          <% for(var i = 0; i < products96.length; i++) { %>
             <a class="col-6 col-lg-3 art" href="/products/detail">
               <article>
               <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp';" />
-                <p class="col-12 desc n">"96" ORANGE HOODIE</p>
-                <p class="col-12 desc p">$2.500</p>
+                <img class="col-12" src=<%= products96[i].img %> onmouseover="this.src=<%= products96[i].imgBack %>;" onmouseout="this.src=<%= products96[i].img %>;" />
+                <p class="col-12 desc n"><%= products96[i].name %></p>
+                <p class="col-12 desc p">$<%= products96[i].price %></p>
               </div>
             </article>
             </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">  
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp';" />
-                <p class="col-12 desc n">"MUERTE EN EL AGUA" T-SHIRT</p>
-                <p class="col-12 desc p">$1.800</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK DROP</p>
-                <p class="col-12 desc p">$2.500</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_f2616a36399842e989c435213973da89~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_f2616a36399842e989c435213973da89~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK T-SHIRT</p>
-                <p class="col-12 desc p">$1.200</p>
-              </div>
-            </article>
-            </a>
+            <% } %>
           </section>
         </div>
         <div class="row">
@@ -128,42 +103,17 @@
         </div>
         <div class="row">
           <section class="products">
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-              <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp';" />
-                <p class="col-12 desc n">"96" ORANGE HOODIE</p>
-                <p class="col-12 desc p">$2.500</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">  
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp';" />
-                <p class="col-12 desc n">"MUERTE EN EL AGUA" T-SHIRT</p>
-                <p class="col-12 desc p">$1.800</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK DROP</p>
-                <p class="col-12 desc p">$2.500</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_f2616a36399842e989c435213973da89~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_f2616a36399842e989c435213973da89~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK T-SHIRT</p>
-                <p class="col-12 desc p">$1.200</p>
-              </div>
-            </article>
-            </a>
+              <% for(var i = 0; i < productsESSENCE.length; i++) { %>
+                <a class="col-6 col-lg-3 art" href="/products/detail">
+                  <article>
+                  <div class="row">
+                    <img class="col-12" src=<%= productsESSENCE[i].img %> />
+                    <p class="col-12 desc n"><%= productsESSENCE[i].name %></p>
+                    <p class="col-12 desc p">$<%= productsESSENCE[i].price %></p>
+                  </div>
+                </article>
+                </a>
+                <% } %>
           </section>
         </div>
         <div class="row">
@@ -171,42 +121,17 @@
         </div>
         <div class="row">
           <section class="products">
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-              <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e7fbc669a8524b9b8811aba227ed4ea3~mv2_d_1600_1600_s_2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp';" />
-                <p class="col-12 desc n">"96" ORANGE HOODIE</p>
-                <p class="col-12 desc p">$2.500</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">  
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_c849c0b510df4f428576802ff97454cd~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp';" />
-                <p class="col-12 desc n">"MUERTE EN EL AGUA" T-SHIRT</p>
-                <p class="col-12 desc p">$1.800</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_4bda08b855a74566a7936191acbd7199~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK DROP</p>
-                <p class="col-12 desc p">$2.500</p>
-              </div>
-            </article>
-            </a>
-            <a class="col-6 col-lg-3 art" href="/products/detail">
-            <article>
-              <div class="row">
-                <img class="col-12" src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp' onmouseover="this.src='https://static.wixstatic.com/media/0ef68e_f2616a36399842e989c435213973da89~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_f2616a36399842e989c435213973da89~mv2.webp';" onmouseout="this.src='https://static.wixstatic.com/media/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_391da8579ab04fc9a8f41d5a93f8d980~mv2.webp';" />
-                <p class="col-12 desc n">"96" BLACK T-SHIRT</p>
-                <p class="col-12 desc p">$1.200</p>
-              </div>
-            </article>
-            </a>
+              <% for(var i = 0; i < productsBASIC.length; i++) { %>
+                <a class="col-6 col-lg-3 art" href="/products/detail">
+                  <article>
+                  <div class="row">
+                    <img class="col-12" src=<%= productsBASIC[i].img %> onmouseover="this.src=<%= productsBASIC[i].imgBack %>;" onmouseout="this.src=<%= productsBASIC[i].img %>;" />
+                    <p class="col-12 desc n"><%= productsBASIC[i].name %></p>
+                    <p class="col-12 desc p">$<%= productsBASIC[i].price %></p>
+                  </div>
+                </article>
+                </a>
+                <% } %>
           </section>
         </div>
       
