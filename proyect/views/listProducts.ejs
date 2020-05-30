@@ -10,40 +10,47 @@
   </head>
   <body>
     <%- include('partials/header.ejs') %>
+    <div class="container-fluid pad mobile">
+      <div class="col-12 banner">
+        <h6>banner</h6>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 banner desk">
+          <h6>banner</h6>
+        </div>
+      </div>
+  </div>
     <main class="container-fluid">
-        <div class="row align-items-center nav">
-          <div class="row col-9 desk">
-            <a href="/96" class="col-3 sec">"96"</a>
-            <a href="/ESSENCE" class="col-3 sec">"ESSENCE"</a>
-            <a href="/BASIC" class="col-3 sec">"BASIC"</a>
-            <a href="/SALE" class="col-3 sec">SALE</a>
-          </div>
-          <div class="col-12 mobile">
-            <h3 class="m">Nuestros Productos</h3>
+          <div class="col-12 mobile s">
+            <h3 class="m"><%= product.category %></h3>
           </div>
         </div>
     </main>
 
-    <main class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-md-4 col-lg-4 ft">
-          <a href="/96"> 
-            <img class="col-12" src='/images/96.jpg' onmouseover="this.src='/images/96_BACK.jpg';" onmouseout="this.src='/images/96.jpg';" />
-          </a>
+    <main class="container">
+        <div class="row">
+          <h6 class="col-12 nuestrosProd desk"><%= product.category %></h6>
         </div>
-        <div class="col-12 col-md-4 col-lg-4 ft">
-          <a href="/ESSENCE">
-            <img class="col-12" src='/images/ESSENCE.jpg' onmouseover="this.src='/images/ESSENCE_BACK.jpg';" onmouseout="this.src='/images/ESSENCE.jpg';" />
-          </a>
+        <div class="row">
+          <section class="products">
+          <% for(var i = 0; i < productsFil.length; i++) { %>
+            <a class="col-6 col-lg-3 art" href="/products/detail/<%= productsFil[i].id %>">
+              <article>
+              <div class="row">
+                <img class="col-12" src=<%= productsFil[i].img %> onmouseover="this.src=<%= productsFil[i].imgBack %>;" onmouseout="this.src=<%= products96[i].img %>;" />
+                <p class="col-12 desc n"><%= productsFil[i].name %></p>
+                <p class="col-12 desc p">$<%= productsFil[i].price %></p>
+              </div>
+            </article>
+            </a>
+            <% } %>
+          </section>
         </div>
-        <div class="col-12 col-md-4 col-lg-4 ft">
-          <a href="/BASIC">  
-            <img class="col-12" src='/images/BASIC1.jpg' onmouseover="this.src='/images/BASIC1_BACK.jpg';" onmouseout="this.src='/images/BASIC1.jpg';" />
-          </a>
-        </div>
-      </div>
-    </main>
+        <div class="row">
       
+    </main>
   
     
   <%- include('partials/footer.ejs') %>

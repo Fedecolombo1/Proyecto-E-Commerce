@@ -14,7 +14,7 @@
     <%- include('partials/header.ejs') %>
     <main class="container">
         <div class="row n">
-          <div class="col-12 mobile n"><h6 class="nombreProd"> "96" ORANGE HOODIE</h6></div>
+          <div class="col-12 mobile n"><h6 class="nombreProd"> <%= product.name %></h6></div>
         </div>
         <div class="row f">
             <div class="col-12 col-lg-6">
@@ -26,10 +26,10 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp" class="d-block w-100" alt="...">
+                    <img src=<%= product.img %> alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="https://static.wixstatic.com/media/0ef68e_97c86a58f814407796e7e83bdf776feb~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_97c86a58f814407796e7e83bdf776feb~mv2.webp" class="d-block w-100" alt="...">
+                    <img src=<%= product.imgBack %> class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
                     <img src="https://static.wixstatic.com/media/0ef68e_a732f311752a457e8a477c8861342587~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_a732f311752a457e8a477c8861342587~mv2.webp" class="d-block w-100" alt="...">
@@ -46,10 +46,10 @@
               </div>
             </div>
             <div class="row col-12 col-lg-6">
-                <h6 class="nombreProd col-12 desk"> "96" ORANGE HOODIE</h6>
-                <h6 class="col-12 precio">$2.500</h6>
+                <h6 class="nombreProd col-12 desk"> <%= product.name %></h6>
+                <h6 class="col-12 precio">$<%= product.price %></h6>
                 
-                <h6 class="col-12 talles desc"> <i class="fas fa-tshirt"></i> <span class="rojo">TALLES:</span> La tabla de talles se encuentra en la ultima foto de las muestras de los buzos (arriba). No hacemos cambios por confusión de talle.</h6>
+                <h6 class="col-12 talles desc"> <i class="fas fa-tshirt"></i> <span class="rojo">TALLES:</span> La tabla de talles se encuentra en la ultima foto de las muestras de los productos (arriba). No hacemos cambios por confusión de talle.</h6>
                 <h6 class="col-12 envio desc"> <i class="fas fa-shipping-fast"></i> <span class="rojo">ENVIOS:</span> Va a haber una opción para que pongas tu dirección postal y se va a proceder a cobrarte un extra según de donde seas.</h6>
                 <h6 class="col-12 desc"> 
                   <span class="rojo"> IMPORTANTE:</span> Si estas por realizar la compra, tenes que aclarar el mail  con el cual la vas a realizar o estar logueado en la pagina + el talle del buzo. Solo se puede pedir uno.

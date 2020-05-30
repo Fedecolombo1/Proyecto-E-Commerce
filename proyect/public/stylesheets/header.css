@@ -52,6 +52,7 @@ h3.m {
 section.products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-1 {
@@ -120,6 +121,12 @@ input.mobile{
 }
 div.row.col-4.col-lg-1.buscadorMobile {
     justify-content: flex-end;
+}
+.ft {
+    margin-bottom: 20px;
+}
+.s {
+    border-bottom: 1px solid #ced6e0;
 }
 @media(min-width: 1024px){
     .fa-bars {
