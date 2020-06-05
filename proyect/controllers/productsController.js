@@ -29,21 +29,29 @@ var controller = {
         res.render("home")   
     },
     edit: function(req,res, next) {
-       
-        res.render("edit")
+        for(var i = 0;i < products.length; i++){
+            if(products[i].id == req.params.id){
+                var product = products[i]
+            }
+        }
+        res.render("productEdit", {product})
     },
 
     update: function(req,res, next) {
         var updateProduct = {
+            id: 1,
             name: req.body.name,
             price:req.body.price,
-            img:req.body.img,
-            imgBack:req.body.imgBack,
+            img: "/images/products/" + req.body.img,
+            imgBack: "/images/products/" + req.body.imgBack,
             category: req.body.category,
-            article: req.body.article,
         }
 
-        products.push(newProduct);
+        for(var i = 0;i < products.length; i++){
+            if(products[i].id == updateProduct.id){
+                products[i] = updateProduct
+            }
+        }
         
         products = JSON.stringify(products);
         fs.writeFileSync("./database/products.json", products);
@@ -56,8 +64,8 @@ var controller = {
             id: 8,
             name: req.body.name,
             price:req.body.price,
-            img:req.body.img,
-            imgBack:req.body.imgBack,
+            img: "/images/products/" + req.body.img,
+            imgBack: "/images/products/" + req.body.imgBack,
             category: req.body.category,
             article: req.body.article,
         }

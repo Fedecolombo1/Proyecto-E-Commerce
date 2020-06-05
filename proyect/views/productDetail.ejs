@@ -72,9 +72,9 @@
                     <form action="/products/delete/<%= product.id %>" method="POST">
                     <button class="col-12 a" type="submit"><i class="fas fa-trash-alt"></i>  Borrar Producto</button>
                     </form>
-                    <form action="/products/<%=product.id%>/edit" method="GET">
+                    <a href="/products/edit/<%= product.id%>">
                       <button class="col-12 a" type="submit"><i class="fas fa-edit"></i>  Editar Producto</button>
-                      </form>
+                    </a>
                   </div>
                 </div>
             </div>

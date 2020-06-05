@@ -12,9 +12,9 @@ router.get('/add', function(req, res, next) {
 
 router.post('/add', productsController.productCreate)
 
-router.get('/products/:id/edit', productsController.edit)
+router.get('/edit/:id', productsController.edit)
 
-router.post('/products/:id/edit', productsController.update)
+router.post('/edit/:id', productsController.update)
 
 router.post("/delete/:id", productsController.delete)
 
