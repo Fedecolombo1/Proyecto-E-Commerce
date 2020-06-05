@@ -18,7 +18,7 @@ var controller = {
             var product = products[i]
         }
       }
-      console.log(productsFil);
+      
       
       res.render('listProducts', {products96, productsESSENCE, productsBASIC,product, productsFil});
     }

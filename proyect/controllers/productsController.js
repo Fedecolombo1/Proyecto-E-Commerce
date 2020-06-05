@@ -17,7 +17,7 @@ var controller = {
         if(product == undefined){
             res.render("error")
         }
-        res.render('productDetail',{product});
+        res.render('productDetail',{product, products});
     },
     delete: function(req, res, next) {
         console.log(products);
