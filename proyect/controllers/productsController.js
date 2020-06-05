@@ -29,18 +29,44 @@ var controller = {
         res.render("home")   
     },
     edit: function(req,res, next) {
-        products = products.filter(product => product.id = req.params.id)
-        
-        products.array.forEach(element => {
-            
-        });
+       
+        res.render("edit")
+    },
 
+    update: function(req,res, next) {
+        var updateProduct = {
+            name: req.body.name,
+            price:req.body.price,
+            img:req.body.img,
+            imgBack:req.body.imgBack,
+            category: req.body.category,
+            article: req.body.article,
+        }
+
+        products.push(newProduct);
+        
         products = JSON.stringify(products);
         fs.writeFileSync("./database/products.json", products);
-        res.render()
+        
+        res.render("home")
     },
-    productCreate: function(req,res,next){
 
+    productCreate: function(req,res,next){
+        var newProduct = {
+            id: 8,
+            name: req.body.name,
+            price:req.body.price,
+            img:req.body.img,
+            imgBack:req.body.imgBack,
+            category: req.body.category,
+            article: req.body.article,
+        }
+
+        products.push(newProduct);
+        
+        products = JSON.stringify(products);
+        fs.writeFileSync("./database/products.json", products);
+        res.render("home")
     },
 
 }

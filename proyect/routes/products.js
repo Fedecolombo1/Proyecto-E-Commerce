@@ -10,9 +10,11 @@ router.get('/add', function(req, res, next) {
   res.render('productAdd')
 });
 
-router.post('/products', productsController.productCreate)
+router.post('/add', productsController.productCreate)
 
 router.get('/products/:id/edit', productsController.edit)
+
+router.post('/products/:id/edit', productsController.update)
 
 router.post("/delete/:id", productsController.delete)
 

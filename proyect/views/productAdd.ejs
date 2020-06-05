@@ -20,6 +20,8 @@
 
     <%- include('partials/header.ejs') %>
 
+
+<form action="/products/add" method="POST">
 <div class="container">
 <div class="row">
 <div class="col-lg-12 p-5 bg-#f1f2f6 mb-5">
@@ -33,31 +35,40 @@
                 <br>
                 
                 <h5>Añadir Producto</h5>
-    
+                
             <div class="textbox">
                 <i class="fas fa-box-open"></i>
-                <input type="text" placeholder="Nombre del Producto" name="" value="">
+                <input type="text" placeholder="Nombre del Producto" name="name" value="">
             </div>
             <div class="textbox">
                 <i class="fas fa-tshirt"></i>
-                <input type="text" placeholder="Articulo del Producto" name="" value="">
+                <input type="text" placeholder="Articulo del Producto" name="article" value="">
             </div>
             <div class="textbox">
                 <i class="fas fa-dollar-sign"></i>
-                    <input type="text" placeholder="Precio" name="" value="">
+                    <input type="text" placeholder="Precio" name="price" value="">
                 </div>
             <div class="textbox">
                 <i class="fas fa-comment-alt"></i>
-                <textarea name="descripcion" id="" cols="25" rows="3" placeholder="Escribe la descripcion del producto" type="text"></textarea>
+                <textarea name="description" id="" cols="25" rows="3" placeholder="Escribe la descripcion del producto" type="text"></textarea>
                 </div>
             <div class="textbox">
                 <i class="fas fa-image"></i>
                 <label for="imagen">Imagen del Producto:</label>
-                <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg"/>
+                <input type="file" id="imagen" name="img" accept="image/png, image/jpeg"/>
             </div>
     
+            <div class="textbox">
+                <i class="fas fa-image"></i>
+                <label for="imagen">Imagen del Atras:</label>
+                <input type="file" id="imagen" name="imgBack" accept="image/png, image/jpeg"/>
+            </div>
+            <div class="textbox">
+            <i class="fas fa-tshirt"></i>
+            <input type="text" placeholder="Categoria" name="category" value="">
+            </div>
             <div>
-                <input type="button" class="btn" name="" value="Añadir Producto">
+                <input type="submit" class="btn" name="button" value="Añadir Producto">
             </div>
              
             </div>
@@ -74,6 +85,8 @@
 </div>
 </div>
 </div>
+
+</form>
     <%- include('partials/footer.ejs') %>
     
            
