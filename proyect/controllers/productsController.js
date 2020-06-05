@@ -27,7 +27,22 @@ var controller = {
         fs.writeFileSync("./database/products.json", products);
         
         res.render("home")   
-    }
+    },
+    edit: function(req,res, next) {
+        products = products.filter(product => product.id = req.params.id)
+        
+        products.array.forEach(element => {
+            
+        });
+
+        products = JSON.stringify(products);
+        fs.writeFileSync("./database/products.json", products);
+        res.render()
+    },
+    productCreate: function(req,res,next){
+
+    },
+
 }
 
 module.exports = controller
