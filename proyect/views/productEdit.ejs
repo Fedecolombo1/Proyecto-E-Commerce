@@ -40,6 +40,13 @@
                 <i class="fas fa-box-open"></i>
                 <input type="text" placeholder="Nombre del Producto" name="name" value="<%=product.name%>">
             </div>
+
+            <div class="textbox">
+                <i class="fas fa-tshirt"></i>
+                <input type="text" placeholder="Categoria" name="category" value="<%=product.category%>">
+                </div>
+            <div>
+
             <div class="textbox">
                 <i class="fas fa-dollar-sign"></i>
                     <input type="text" placeholder="Precio" name="price" value="<%=product.price%>">
@@ -52,15 +59,11 @@
     
             <div class="textbox">
                 <i class="fas fa-image"></i>
-                <label for="imagen">Imagen de Atras:</label>
+                <label for="imagen">Imagen del Atras:</label>
                 <input value="<%=product.imgBack%>" type="file" id="imagen" name="imgBack" accept="image/png, image/jpeg"/>
             </div>
-            <div class="textbox">
-            <i class="fas fa-tshirt"></i>
-            <input type="text" placeholder="Categoria" name="category" value="<%=product.category%>">
-            </div>
-            <div>
-                <input type="submit" class="btn" name="button" value="Añadir Producto">
+            
+                <input type="submit" class="btn" name="button" value="Editar Producto">
             </div>
              
             </div>
