@@ -63,3 +63,10 @@ h5{
     background-color: #EA2027;
     color: white;
 }
+
+.categoryMenu{
+    background-color: #f1f2f6;
+    border: none;
+    border-color: transparent;
+    padding-left: 10px;
+}
