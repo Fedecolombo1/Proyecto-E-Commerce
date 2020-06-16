@@ -24,7 +24,7 @@
 <div class="col-lg-12 p-5 bg-#f1f2f6 rounded shadow-regular mb-5">
 
 
-<form action="" method="">
+<form action="/users/login" method="POST">
 <div class="container-fluid">
 <div class="row">
 <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 table"> 
@@ -34,21 +34,21 @@
                      
                     <div class="textbox">
                         <i class="fas fa-at"></i>
-                         <input type="email" placeholder="Correo Electronico" name="" value="">
+                         <input type="email" placeholder="Correo Electronico" name="email" value="">
                     </div>
 
                 
                      
                     <div class="textbox">
                      <i class="fa fa-lock" aria-hidden="true"></i>
-                         <input type="password" placeholder="Contraseña" name="" value="">
+                         <input type="password" placeholder="Contraseña" name="password" value="">
                     </div>
 
                 
 
                     <div class='forgot-link'>
                           <div class="form-check">
-                             <input type="checkbox" class="form-check-input" id="remember">
+                             <input type="checkbox" class="form-check-input" id="remember" name="recuerdame">
                              <label for="remember">Recuerda Usuario</label>
                           </div>
                     </div>  
@@ -56,7 +56,7 @@
                     <br>
                   
                     <div>
-                        <input type="button" class="btn" name="" value="Log-in">
+                        <input type="submit" class="btn" name="" value="Log-in">
                     </div>
                    
                     <br>
