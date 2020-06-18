@@ -12,7 +12,7 @@ router.get('/login',function(req, res, next) {
 router.post('/login', usersMiddleware.login,function(req, res, next) {
   res.render('Home');
 });
-router.get('/register', function(req, res, next) {
+router.get('/register', usersMiddleware.guest,function(req, res, next) {
   res.render('Register');
 });
 module.exports = router;

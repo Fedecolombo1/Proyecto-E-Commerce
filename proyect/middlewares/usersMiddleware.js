@@ -36,6 +36,33 @@ var middleware = {
             res.redirect("/users/login")
         }
     }
+
+
+    auth2: function(req,res,next){
+        if(req.session.user){
+            next();
+        }else{
+            res.redirect("/login");
+        }
+    },
+    guest: function(req,res,next){
+        if(!req.session.user){
+            next();
+        }
+    },
+    isa: function(){
+        if(req.session.user.name == "Isa"){
+            next();
+        }else{
+            res.redirect("/");
+        }
+    }
+
+
+
+
+
+
 }
 
 module.exports = middleware
