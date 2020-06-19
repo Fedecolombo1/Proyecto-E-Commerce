@@ -50,20 +50,19 @@ var controller = {
 
     
     createUser: function (req,res,next) {
-        var errors = validationResult(req);
-        if (errors.isEmpty()){
+        
+    
             var newUser = {
                 id:1, 
                 name: req.body.name,
                 lastname:req.body.lastname,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                passwordConfirm: bcrypt.hashSync(req.body.passwordConfirm, 10),
                 dateOfBirth:req.body.dateOfBirth,
-            } 
-        }
+                phoneNumber: req.body.phoneNumber,
+            }
+        console.log(req.body)
         
-
     users.push(newUser);
     users = JSON.stringify(users);
         fs.writeFileSync("./database/users.json", users);
@@ -71,9 +70,6 @@ var controller = {
 
 },
 
-    deleteUser: function(req,res, next){
-
-    }
 
 
 
