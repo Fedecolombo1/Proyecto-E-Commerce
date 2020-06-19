@@ -40,7 +40,7 @@ var middleware = {
         } else {
             res.redirect("/users/login")
         }
-    }
+    },
 
 
     auth2: function(req,res,next){
