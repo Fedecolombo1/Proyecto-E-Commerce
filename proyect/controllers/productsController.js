@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-var products = JSON.parse(fs.readFileSync("./database/products.json"))
+var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
 
 var products96 = products.filter(product => product.category == "96");
 var productsESSENCE = products.filter(product => product.category == "ESSENCE");

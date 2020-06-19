@@ -38,24 +38,24 @@
     
         <div class="textbox">
             <i class="fas fa-user-alt"></i>
-            <input type="text" placeholder="Nombre" name="" value="">
+            <input type="text" placeholder="Nombre" name="name" value="">
         </div>
         
 
         <div class="textbox">
             <i class="fas fa-users"></i>
-            <input type="text" placeholder="Apellido" name="" value="">
+            <input type="text" placeholder="Apellido" name="lastname" value="">
         </div>
 
 
         <div class="textbox">
             <i class="fas fa-at"></i>
-            <input type="email" placeholder="Correo Electronico" name="" value="">
+            <input type="email" placeholder="Correo Electronico" name="email" value="">
         </div>
         
         <div class="textbox">
             <i class="fa fa-lock" aria-hidden="true"></i>
-                <input type="password" placeholder="Contraseña" name="" value="">
+                <input type="password" placeholder="Contraseña" name="password" value="">
         </div>
         
         <div class="textbox">
@@ -71,14 +71,24 @@
         
         <div class="textbox">
             <i class="fas fa-phone-alt"></i>
-            <input type="text" placeholder="Número de teléfono" name="" value="">
+            <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="">
         </div>
-        
+
+        <div class="textbox">
+            <p class="birthdate">Foto de perfil</p>
+            <input type="file" placeholder="Foto de perfil" name="avatar" value="">
+        </div>
+
         <br>
 
         <div>
-            <input type="button" class="btn" name="" value="Regístrate">
+            <input type="submit" class="btn" name="" value="Regístrate">
         </div>
+
+
+        <% if (typeof errors != 'undefined'){%>
+            <p style="color: red"><%=errors[0].msg%></p>
+            <%}%>
 
         
     

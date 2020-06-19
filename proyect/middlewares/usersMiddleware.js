@@ -4,6 +4,11 @@ const fs = require("fs")
 var users = JSON.parse(fs.readFileSync("./database/users.json"))
 
 var middleware = {
+
+    register: function(res, req, next){
+
+    },
+
     login: function(req, res, next){
         pass = bcrypt.hashSync("hola" , 10)
         console.log(pass);
