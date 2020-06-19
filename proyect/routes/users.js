@@ -28,6 +28,7 @@ router.get('/login',function(req, res, next) {
 router.post('/login', usersMiddleware.login,function(req, res, next) {
   res.render('Home');
 });
+<<<<<<< HEAD
 
 router.get('/register', usersController.registerRender);
 
@@ -52,4 +53,9 @@ body('passwordConfirm').custom(function (value, {req}) {
 
 
 
+=======
+router.get('/register', usersMiddleware.guest,function(req, res, next) {
+  res.render('Register');
+});
+>>>>>>> d958875fbb947719298362e196ade7cb92b8dad8
 module.exports = router;
