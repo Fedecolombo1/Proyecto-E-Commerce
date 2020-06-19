@@ -52,19 +52,17 @@ var controller = {
     createUser: function (req,res,next) {
         var errors = validationResult(req);
         if (errors.isEmpty()){
-            
+            var newUser = {
+                id:1, 
+                name: req.body.name,
+                lastname:req.body.lastname,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                passwordConfirm: bcrypt.hashSync(req.body.passwordConfirm, 10),
+                dateOfBirth:req.body.dateOfBirth,
+            } 
         }
-    
-        var newUser = {
-        id:1, 
-        name: req.body.name,
-        lastname:req.body.lastname,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        passwordConfirm: bcrypt.hashSync(req.body.passwordConfirm, 10),
-        dateOfBirth:req.body.dateOfBirth,
-        //faltaria el multer
-    }
+        
 
     users.push(newUser);
     users = JSON.stringify(users);
@@ -76,7 +74,6 @@ var controller = {
     deleteUser: function(req,res, next){
 
     }
-
 
 
 

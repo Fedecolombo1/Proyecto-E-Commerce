@@ -1,19 +1,23 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 const usersMiddleware = require("../middlewares/usersMiddleware")
 var multer = require('multer');
-var upload = multer({dest: '../public/images/users'});
+const {check, validationResult, body} = require('express-validator');
+var usersController = require('../controllers/usersController');
 
-var imageStorage = multer.diskStorage({
-  destination: function(req,res, cb){
+
+var storage = multer.diskStorage({
+  destination: function(req,file, cb){
     cb(null, 'public/images/users')
   },
-  filename: function(req,res, cb){
-    cb(null, file.fieldname + '' + Date.now() + path.extname(file.originalname))
+  filename: function(req,file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
   }
+  
 });
 
-var upload = multer({ storage: storage });
+var upload = multer({storage: storage});
 
 /* GET users listing. */
 
@@ -48,7 +52,7 @@ body('passwordConfirm').custom(function (value, {req}) {
 }).withMessage('No coinciden las contraseñas')
 
 
-], usersController.storeRegisterForm);
+], usersController.createUser);
 
 
 
