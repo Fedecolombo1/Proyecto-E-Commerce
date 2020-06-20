@@ -57,6 +57,7 @@ var controller = {
     console.log(errors);
 
     if(!errors.isEmpty()){
+        
         res.render('register', {errors: errors.errors})
         
     } else{
@@ -77,9 +78,6 @@ users = JSON.stringify(users);
     res.render("home")
 }
 },
-
-
-
 
 
 }
