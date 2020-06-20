@@ -35,23 +35,15 @@ router.post('/login', usersMiddleware.login,function(req, res, next) {
 
 router.get('/register',usersMiddleware.guest, usersController.registerRender);
 
-router.post('/register', upload.any(), [
-  check('name').isLength({min: 1}).withMessage('Completa su nombre por favor'), check('lastname').isLength({ min: 2 }).withMessage('Completa su apellido por favor'),
+router.post('/register', upload.any(),[
+  
+  check('name').isLength({min: 1}).withMessage('Completa su nombre por favor'), 
+  check('lastname').isLength({ min: 2 }).withMessage('Completa su apellido por favor'),
   check('email').isEmail().withMessage('Email invalido'),
-  check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'), check('phoneNumber').isInt().withMessage('Ingresar su numero de telefono'),
-  check('phoneNumber').isLength({ min: 8 }).withMessage('El numero de telefono debe tener 8 caracteres'),
-
-
-body('passwordConfirm').custom(function (value, {req}) {
-  let passwordTest = req.body.password;
-  console.log(passwordTest);
-  if (passwordTest != value) {
-      return false
-  }
-  return true;
-}).withMessage('No coinciden las contraseñas')
-
-
+  check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'), 
+  check('phoneNumber').isInt().withMessage('Ingresar su numero de telefono'),
+  check('phoneNumber').isLength({ min: 8 }).withMessage('El numero de telefono debe tener 8 caracteres')
+  
 ], usersController.createUser);
 
 

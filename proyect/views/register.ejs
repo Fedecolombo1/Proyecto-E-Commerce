@@ -81,19 +81,23 @@
         </div>
 
         <br>
+        <% if(typeof errors != 'undefined') { %>
+            <ul>
+                <% for(let i = 0; i < errors.length; i++){ %>
+                <li> <%= errors[i].msg %></li>
+            <% } %>
+            </ul>
 
+        <% } %> 
+        
         <div>
             <input type="submit" class="btn" name="" value="Regístrate">
         </div>
 
         </form>
-
-        <% if (typeof errors != 'undefined'){%>
-            <p style="color: red"><%=errors[0].msg%></p>
-            <%}%>
-
         
-    
+      
+   
  </div>
 
     

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const {check, validationResult, body} = require('express-validator');
+const { check, validationResult } = require('express-validator');
 const multer = require('multer');
 
 var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
@@ -35,6 +35,8 @@ var controller = {
         res.redirect('/')
     },
 
+// por ahora no existe el log-out botton (es para el futuro)
+
     logout: function(req, res, next){
         req.session.destroy();
         res.clearCookie('remember')
@@ -51,25 +53,36 @@ var controller = {
     
     createUser: function (req,res,next) {
         
-    
-            var newUser = {
-                id:1, 
-                name: req.body.name,
-                lastname:req.body.lastname,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                dateOfBirth:req.body.dateOfBirth,
-                phoneNumber: req.body.phoneNumber,
-            }
-        console.log(req.body)
-        
-    users.push(newUser);
-    users = JSON.stringify(users);
-        fs.writeFileSync("./database/users.json", users);
-        res.render("home")
+    var errors = validationResult(req);
+    console.log(errors);
 
+    if(!errors.isEmpty()){
+        
+        res.render('register', {errors: errors.errors})
+        
+    } else{
+        var newUser = {
+            id:1, 
+            name: req.body.name,
+            lastname:req.body.lastname,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            dateOfBirth:req.body.dateOfBirth,
+            phoneNumber: req.body.phoneNumber,
+        }
+    console.log(req.body)
+    
+users.push(newUser);
+users = JSON.stringify(users);
+    fs.writeFileSync("./database/users.json", users);
+    res.render("home")
+}
 },
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f2caf8fcd49a89e9386641b1bf19c908cb41d49
 }
 
 
