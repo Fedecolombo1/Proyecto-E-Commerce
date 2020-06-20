@@ -4,6 +4,10 @@
   "description": "Desarolladores: Tom, Fede, Ruben Rubro: Tienda de marca de ropa",
   "main": "index.js",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "express-validator": "^6.5.0",
+    "multer": "^1.4.2",
     "npm-start-command": "^1.0.1"
   },
   "devDependencies": {},

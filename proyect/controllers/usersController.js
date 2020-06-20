@@ -17,7 +17,7 @@ var controller = {
 
     startLogin: function (req,res, next){
         var errors = validationResult(req);
-        var usersLogin;
+        var usersLogin = '';
 
         for(var i=0; i= users.length; i++){
             if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)){
@@ -69,10 +69,6 @@ var controller = {
         res.render("home")
 
 },
-
-
-
-
 
 }
 
