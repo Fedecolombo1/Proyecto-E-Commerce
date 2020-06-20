@@ -39,45 +39,45 @@
     
         <div class="textbox">
             <i class="fas fa-user-alt"></i>
-            <input type="text" placeholder="Nombre" name="name" value="" required>
+            <input type="text" placeholder="Nombre" name="name" value="">
         </div>
         
 
         <div class="textbox">
             <i class="fas fa-users"></i>
-            <input type="text" placeholder="Apellido" name="lastname" value="" required>
+            <input type="text" placeholder="Apellido" name="lastname" value="">
         </div>
 
 
         <div class="textbox">
             <i class="fas fa-at"></i>
-            <input type="email" placeholder="Correo Electronico" name="email" value="" required>
+            <input type="email" placeholder="Correo Electronico" name="email" value="">
         </div>
         
         <div class="textbox">
             <i class="fa fa-lock" aria-hidden="true"></i>
-                <input type="password" placeholder="Contraseña" name="password" value="" required>
+                <input type="password" placeholder="Contraseña" name="password" value="">
         </div>
         
         <div class="textbox">
              <i class="fa fa-lock" aria-hidden="true"></i>
-                 <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="" required>
+                 <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="">
         </div>
         
         <div class="textbox">
             <p class="birthdate">Fecha de nacimiento </p>  
             <i class="fas fa-calendar-alt"></i>
-            <input  type="date" placeholder="Fecha de nacimiento" value="" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa" required>
+            <input  type="date" placeholder="Fecha de nacimiento" value="" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa">
         </div>
         
         <div class="textbox">
             <i class="fas fa-phone-alt"></i>
-            <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="" required>
+            <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="">
         </div>
 
         <div class="textbox">
             <p class="birthdate">Foto de perfil</p>
-            <input type="file" placeholder="Foto de perfil" name="avatar" value="" required>
+            <input type="file" placeholder="Foto de perfil" name="avatar" value="">
         </div>
 
         <br>
@@ -89,11 +89,12 @@
         </form>
 
         <% if (typeof errors != 'undefined'){%>
-            <p style="color: red"><%=errors[0].msg%></p>
+         <% for(var i=0; i< errors.length; i++)%>   
+         
+         <p style="color: red"><%= errors[i].msg%></p>
             <%}%>
 
         
-    
  </div>
 
     

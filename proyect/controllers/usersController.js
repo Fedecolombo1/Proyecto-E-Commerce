@@ -53,23 +53,29 @@ var controller = {
     
     createUser: function (req,res,next) {
         
-    
-            var newUser = {
-                id:1, 
-                name: req.body.name,
-                lastname:req.body.lastname,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                dateOfBirth:req.body.dateOfBirth,
-                phoneNumber: req.body.phoneNumber,
-            }
-        console.log(req.body)
-        
-    users.push(newUser);
-    users = JSON.stringify(users);
-        fs.writeFileSync("./database/users.json", users);
-        res.render("home")
+    var errors = validationResult(req);
+    console.log(errors);
 
+    if(!errors.isEmpty()){
+        res.render('register', {errors: errors.errors})
+        
+    } else{
+        var newUser = {
+            id:1, 
+            name: req.body.name,
+            lastname:req.body.lastname,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            dateOfBirth:req.body.dateOfBirth,
+            phoneNumber: req.body.phoneNumber,
+        }
+    console.log(req.body)
+    
+users.push(newUser);
+users = JSON.stringify(users);
+    fs.writeFileSync("./database/users.json", users);
+    res.render("home")
+}
 },
 
 
