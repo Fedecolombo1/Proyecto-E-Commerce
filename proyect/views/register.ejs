@@ -82,9 +82,9 @@
 
         <br>
         <% if(typeof errors != 'undefined') { %>
-            <ul>
+            <ul style="padding-left: 10px;">
                 <% for(let i = 0; i < errors.length; i++){ %>
-                <li> <%= errors[i].msg %></li>
+                <li style="color: red; list-style-type: none;"> <i class="fas fa-exclamation"></i> <%= errors[i].msg %></li>
             <% } %>
             </ul>
 
