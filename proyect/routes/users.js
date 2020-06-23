@@ -25,15 +25,15 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/login',function(req, res, next) {
+router.get('/login',usersMiddleware.guest,function(req, res, next) {
   res.render('Login');
 });
 
 router.post('/login', usersMiddleware.login,function(req, res, next) {
-  res.render('Home');
+  res.render('home');
 });
 
-router.get('/register', usersController.registerRender);
+router.get('/register',usersMiddleware.guest, usersController.registerRender);
 
 router.post('/register', upload.any(),[
   

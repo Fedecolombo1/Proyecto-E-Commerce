@@ -10,64 +10,72 @@ var middleware = {
     },
 
     login: function(req, res, next){
-        pass = bcrypt.hashSync("hola" , 10)
-        console.log(pass);
-        /*  for(var i = 0; i < users.length; i++){
-            if(bcrypt.compareSync(req.body.password, users[i].password) && req.body.email == user[i].email)){
-                req.session.usuario = "logueado"
-                next();
-            } else {res.render("Login")}     
-          }   */
-
-        if(req.body.password == "hola" && req.body.email == "2fede14@gmail.com"){
-            req.session.usuario = "logueado"
-            next();
-        } else {res.render("Login")}    
+        var userFound = '';
+            
+        userFound = users.filter(function (user) {
+            return user.email == req.body.email &&
+            bcrypt.compareSync(req.body.password, user.password)            
+        });
         
-        console.log(req.body.recuerdame);
-        
-
-        if(req.body.recuerdame == on){
-            res.cookie('fede', '123', {maxAge: 3600000})
+        if(userFound != ''){
+            req.session.logueado = 'logueado'
+            console.log(userFound);
+            
+            if(req.body.recuerdame != undefined){
+                res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
+            }
+            
+            
+            res.render('home')
         } else {
-            next()
+            res.render('login')
         }
+
+        
+
+        console.log(req.session.logueado);
+        
           
     },
+    
     auth: function(req, res, next){
-        if(req.session.usuario != undefined){
+        if(req.session.logueado != undefined){
             next()
         } else {
             res.redirect("/users/login")
         }
     },
 
-
-    auth2: function(req,res,next){
-        if(req.session.user){
+    guest: function(req,res,next){
+        if(!req.session.logueado){
             next();
         }else{
-            res.redirect("/login");
+            res.redirect('/')
         }
     },
-    guest: function(req,res,next){
-        if(!req.session.user){
-            next();
-        }
-    },
-    isa: function(){
+    admin: function(){
         if(req.session.user.name == "Isa"){
             next();
         }else{
             res.redirect("/");
         }
-    }
+    },
+    recuerdame: function(req, res, next){
+        console.log(req.cookie.recuerdame);
+        
+        var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
+        if(req.cookie.recuerdame != undefined && req.session.logueado == undefined){
+            for(var i=0; i= users.length; i++){
+                if(users[i].email == req.cookie.recuerdame){
+                    userLog = users[i]
+                    break;
+                    
+                }
+            }
+            req.session.logueado = userLog
+        }
 
 
-
-
-
-
+ }
 }
-
 module.exports = middleware

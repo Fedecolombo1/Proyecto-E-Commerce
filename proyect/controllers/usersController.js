@@ -17,7 +17,7 @@ var controller = {
 
     startLogin: function (req,res, next){
         var errors = validationResult(req);
-        var usersLogin;
+        var usersLogin = '';
 
         for(var i=0; i= users.length; i++){
             if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)){
@@ -79,7 +79,10 @@ users = JSON.stringify(users);
 }
 },
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5f2caf8fcd49a89e9386641b1bf19c908cb41d49
 }
 
 
