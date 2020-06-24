@@ -79,10 +79,6 @@ users = JSON.stringify(users);
 }
 },
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5f2caf8fcd49a89e9386641b1bf19c908cb41d49
 }
 
 
