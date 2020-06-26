@@ -6,6 +6,7 @@
     <title>Fresh | Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/882d6fd4b6.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/listproducts.css'>
     
   </head>
   <body>
@@ -36,7 +37,7 @@
         <div class="row">
           <section class="products">
           <% for(var i = 0; i < productsFil.length; i++) { %>
-            <a class="col-6 col-lg-3 art" href="/products/detail/<%= productsFil[i].id %>">
+            <a class="col-6 col-lg-3 art test" href="/products/detail/<%= productsFil[i].id %>">
               <article>
               <div class="row">
                 <img class="col-12" src=<%= productsFil[i].img %> onmouseover="this.src=<%= productsFil[i].imgBack %>;" onmouseout="this.src=<%= products96[i].img %>;" />
