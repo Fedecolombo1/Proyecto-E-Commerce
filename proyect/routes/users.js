@@ -25,9 +25,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/login',usersMiddleware.guest,function(req, res, next) {
-  res.render('Login');
-});
+router.get('/login',usersMiddleware.guest,usersController.loginRender);
 
 router.post('/login', usersMiddleware.login,function(req, res, next) {
   res.render('home');

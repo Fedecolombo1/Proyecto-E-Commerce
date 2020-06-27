@@ -69,12 +69,14 @@
                       </div>
                     </div>
                     <button class="col-12 a"><i class="fas fa-shopping-cart"></i>  Agregar al carrito</button>
-                    <form action="/products/delete/<%= product.id %>" method="POST">
-                    <button class="col-12 a" type="submit"><i class="fas fa-trash-alt"></i>  Borrar Producto</button>
-                    </form>
-                    <a href="/products/edit/<%= product.id%>">
-                      <button class="col-12 a" type="submit"><i class="fas fa-edit"></i>  Editar Producto</button>
-                    </a>
+                    <% if(logueado == 1){ %>
+                      <form action="/products/delete/<%= product.id %>" method="POST">
+                      <button class="col-12 a" type="submit"><i class="fas fa-trash-alt"></i>  Borrar Producto</button>
+                      </form>
+                      <a href="/products/edit/<%= product.id%>">
+                        <button class="col-12 a" type="submit"><i class="fas fa-edit"></i>  Editar Producto</button>
+                      </a>
+                    <% } %>
                   </div>
                 </div>
             </div>

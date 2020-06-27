@@ -16,6 +16,10 @@ var controller = {
     },
 
     startLogin: function (req,res, next){
+        var logueado = 0
+        if(req.session.logueado != undefined){
+          logueado = 1
+        }
         var errors = validationResult(req);
         var usersLogin = '';
 

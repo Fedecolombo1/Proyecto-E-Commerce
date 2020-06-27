@@ -17,7 +17,11 @@ var controller = {
         if(product == undefined){
             res.render("error")
         }
-        res.render('productDetail',{product, products});
+        var logueado = 0
+        if(req.session.logueado != undefined){
+            logueado = 1
+        }
+        res.render('productDetail',{product, products, logueado});
     },
     delete: function(req, res, next) {
         console.log(products);
