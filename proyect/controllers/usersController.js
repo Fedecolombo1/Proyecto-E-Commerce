@@ -59,10 +59,12 @@ var controller = {
         
     var errors = validationResult(req);
     console.log(errors);
+    
+    var body= req.body;
 
     if(!errors.isEmpty()){
-        
-        res.render('register', {errors: errors.errors})
+    
+        res.render('register', {errors: errors.errors, body})
         
     } else{
         var newUser = {
@@ -73,6 +75,7 @@ var controller = {
             password: bcrypt.hashSync(req.body.password, 10),
             dateOfBirth:req.body.dateOfBirth,
             phoneNumber: req.body.phoneNumber,
+            avatar: req.body.avatar
         }
     console.log(req.body)
     
