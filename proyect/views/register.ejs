@@ -94,28 +94,40 @@
             <p class="birthdate">Fecha de nacimiento </p>  
             <i class="fas fa-calendar-alt"></i>
             <% if(typeof body == 'undefined'){ %>
-                <input  type="date" placeholder="Fecha de nacimiento" value="" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa">
+               <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="">
            <% } else { %>
-            <input  type="date" placeholder="Fecha de nacimiento" value="<%= body.dateOfBirth %>" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa">
+               <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="<%= body.password %>">
            <% } %>
-            
-        </div>
+                
+       </div>
+       
+       <div class="textbox">
+        <p class="birthdate">Fecha de nacimiento </p>  
+        <i class="fas fa-calendar-alt"></i>
+        <% if(typeof body == 'undefined'){ %>
+            <input  type="date" placeholder="Fecha de nacimiento" value="" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa">
+       <% } else { %>
+        <input  type="date" placeholder="Fecha de nacimiento" value="<%= body.dateOfBirth %>" name="dateOfBirth"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-ddlabel="dd" data-mmlabel="mm" data-yyyylabel="aaaa">
+       <% } %>
         
-        <div class="textbox">
-            <i class="fas fa-phone-alt"></i>
-            <% if(typeof body == 'undefined'){ %>
-                <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="">
-           <% } else { %>
-            <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="<%= body.phoneNumber%>">
-           <% } %>
-            
-        </div>
+    </div>
+    
+    <div class="textbox">
+        <i class="fas fa-phone-alt"></i>
+        <% if(typeof body == 'undefined'){ %>
+            <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="">
+       <% } else { %>
+        <input type="text" placeholder="Número de teléfono" name="phoneNumber" value="<%= body.phoneNumber%>">
+       <% } %>
+        
+    </div>
 
         <div class="textbox">
             <p class="birthdate">Foto de perfil</p>
                 <input type="file" placeholder="Foto de perfil" name="avatar" value="">     
         </div>
 
+    
         <br>
         <% if(typeof errors != 'undefined') { %>
             <ul style="padding-left: 10px;">
