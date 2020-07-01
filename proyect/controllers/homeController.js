@@ -18,9 +18,17 @@ var controller = {
             var product = products[i]
         }
       }
+      var imageSrc = ''
+      if(req.params.category == 'ESSENCE'){
+        imageSrc = '/images/banners/essence.jpeg'
+      } else if(req.params.category == '96'){
+        imageSrc = '/images/banners/96.jpeg'
+      } else if(req.params.category == 'BASIC'){
+        imageSrc = '/images/banners/basic.jpeg'
+      }
       
       
-      res.render('listProducts', {products96, productsESSENCE, productsBASIC,product, productsFil});
+      res.render('listProducts', {products96, productsESSENCE, productsBASIC,product, productsFil, imageSrc});
     }
 }
 

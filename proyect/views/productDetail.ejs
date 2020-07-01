@@ -69,7 +69,8 @@
                       </div>
                     </div>
                     <button class="col-12 a"><i class="fas fa-shopping-cart"></i>  Agregar al carrito</button>
-                    <% if(logueado == 1){ %>
+                    <% console.log(log) %>
+                    <% if(log == 1){ %>
                       <form action="/products/delete/<%= product.id %>" method="POST">
                       <button class="col-12 a" type="submit"><i class="fas fa-trash-alt"></i>  Borrar Producto</button>
                       </form>
