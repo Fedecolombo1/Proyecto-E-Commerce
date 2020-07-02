@@ -11,19 +11,48 @@
   </head>
   <body>
     <%- include('partials/header.ejs') %>
+    <% if(imageSrc == '/images/banners/ESSENCE.jpg') { %>
     <div class="container-fluid pad mobile">
       <div class="col-12 banner">
-        <h6>banner</h6>
+        <img src="<%= imageSrc %>" alt="">
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 banner desk">
-          <h6>banner</h6>
+        <div class="col-11 banner desk">
+          <img src="<%= imageSrc %>" alt="">
         </div>
       </div>
-  </div>
-    <main class="container-fluid">
+    </div>
+    <% } else { %>
+      <div class="container-fluid pad mobile">
+        <div class="row">
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc %>" alt="">
+          </div>
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc1 %>" alt="">
+          </div>
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc2 %>" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid desk">
+        <div class="row">
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc %>" alt="">
+          </div>
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc1 %>" alt="">
+          </div>
+          <div class="col-3 bannerT">
+            <img src="<%= imageSrc2 %>" alt="">
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <main class="container-fluid">
           <div class="col-12 mobile s">
             <h3 class="m"><%= product.category %></h3>
           </div>

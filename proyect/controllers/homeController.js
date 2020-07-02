@@ -19,16 +19,22 @@ var controller = {
         }
       }
       var imageSrc = ''
+      var imageSrc1 = ''
+      var imageSrc2 = ''
       if(req.params.category == 'ESSENCE'){
-        imageSrc = '/images/banners/essence.jpeg'
+        imageSrc = '/images/banners/ESSENCE.jpg'
       } else if(req.params.category == '96'){
-        imageSrc = '/images/banners/96.jpeg'
+        imageSrc = '/images/banners/ORANGE.jpg'
+        imageSrc1 = '/images/banners/BLACK_ORANGE.jpg'
+        imageSrc2 = '/images/banners/BLACK.jpg'
       } else if(req.params.category == 'BASIC'){
-        imageSrc = '/images/banners/basic.jpeg'
+        imageSrc = '/images/banners/TIENDA.jpg'
+        imageSrc1 = '/images/banners/TIENDA_AMARELLO.jpg'
+        imageSrc2 = '/images/banners/TIENDA_ROSA.jpg'
       }
       
       
-      res.render('listProducts', {products96, productsESSENCE, productsBASIC,product, productsFil, imageSrc});
+      res.render('listProducts', {products96, productsESSENCE, productsBASIC,product, productsFil, imageSrc, imageSrc1, imageSrc2});
     }
 }
 
