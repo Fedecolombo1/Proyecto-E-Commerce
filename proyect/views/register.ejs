@@ -75,13 +75,24 @@
             <% if(typeof body == 'undefined'){ %>
                 <input type="password" placeholder="Contraseña" name="password" value="">
             <% } else { %>
-                <input type="password" placeholder="Contraseña" name="password" value="<%= body.password%>">
+                <input type="password" placeholder="Contraseña" name="password" value="<%= body.password %>">
             <% } %>
                 
         </div>
         
         <div class="textbox">
-            <i class="fa fa-lock" aria-hidden="true"></i>
+             <i class="fa fa-lock" aria-hidden="true"></i>
+             <% if(typeof body == 'undefined'){ %>
+                <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="">
+            <% } else { %>
+                <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="<%= body.password %>">
+            <% } %>
+                 
+        </div>
+        
+        <div class="textbox">
+            <p class="birthdate">Fecha de nacimiento </p>  
+            <i class="fas fa-calendar-alt"></i>
             <% if(typeof body == 'undefined'){ %>
                <input type="password" placeholder="Confirmar Contraseña" name="passwordConfirm" value="">
            <% } else { %>
@@ -111,15 +122,10 @@
         
     </div>
 
-    <div class="textbox">
-        <p class="birthdate">Foto de perfil</p>
-        <% if(typeof body == 'undefined'){ %>
-            <input type="file" placeholder="Foto de perfil" name="avatar" value="">
-       <% } else { %>
-        <input type="file" placeholder="Foto de perfil" name="avatar" value="<%= body.avatar %>">
-       <% } %>
-        
-    </div>
+        <div class="textbox">
+            <p class="birthdate">Foto de perfil</p>
+                <input type="file" placeholder="Foto de perfil" name="avatar" value="">     
+        </div>
 
     
         <br>

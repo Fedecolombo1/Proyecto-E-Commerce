@@ -56,11 +56,12 @@ var controller = {
 
     
     createUser: function (req,res,next) {
+        console.log(req.body);
         
     var errors = validationResult(req);
     console.log(errors);
     
-    var body= req.body;
+    var body = req.body;
 
     if(!errors.isEmpty()){
     

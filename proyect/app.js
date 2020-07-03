@@ -24,7 +24,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({secret: "Fede estuvo aca"}))
+app.use(session({secret: "holas"}))
+app.use(function(req, res, next){
+  if(req.session.logueado){
+    res.locals.logueado = req.session.logueado
+  } else {
+    res.locals.logueado = undefined
+  }
+  next()
+})
 
 //app.use de rutas
 app.use('/', homeRouter);

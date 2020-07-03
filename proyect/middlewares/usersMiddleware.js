@@ -5,10 +5,6 @@ var users = JSON.parse(fs.readFileSync("./database/users.json"))
 
 var middleware = {
 
-    register: function(res, req, next){
-
-    },
-
     login: function(req, res, next){
         var userFound = '';
             
@@ -18,8 +14,8 @@ var middleware = {
         });
         
         if(userFound != ''){
-            req.session.logueado = 'logueado'
-            console.log(userFound);
+            req.session.logueado = userFound
+            //console.log(userFound);
             
             if(req.body.recuerdame != undefined){
                 res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})

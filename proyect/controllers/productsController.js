@@ -17,11 +17,11 @@ var controller = {
         if(product == undefined){
             res.render("error")
         }
-        var logueado = 0
+        var log = 0
         if(req.session.logueado != undefined){
-            logueado = 1
+            log = 1
         }
-        res.render('productDetail',{product, products, logueado});
+        res.render('productDetail',{product, products, log});
     },
     delete: function(req, res, next) {
         console.log(products);
@@ -64,6 +64,7 @@ var controller = {
     },
 
     productCreate: function(req,res,next){
+
         var newProduct = {
             id: 8,
             name: req.body.name,
