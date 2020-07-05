@@ -5,8 +5,6 @@
     <div class="container-fluid">
       <div class="row align-items-center header">
         <div class="col-3 login desk">
-          <% console.log('hola') %>
-          <% console.log(logueado) %>
             <% if(typeof logueado != 'undefined'){ %>
               <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, <%= logueado[0].name %></button></a>
             <% } else { %>

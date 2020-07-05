@@ -23,9 +23,7 @@ var upload = multer({storage: storage});
 
 router.get('/detail/:id', productsController.productDetail);
 
-router.get('/add', function(req, res, next) {
-  res.render('productAdd')
-});
+router.get('/add', productsController.productAdd);
 
 router.post('/add',upload.any() , productsController.productCreate)
 

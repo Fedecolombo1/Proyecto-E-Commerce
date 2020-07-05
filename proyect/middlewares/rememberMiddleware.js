@@ -9,12 +9,10 @@ function recuerdameMiddleware (req,res, next){
 
     for(var i=0; i= users.length; i++){
         if(users[i].email == req.cookies.recuerdame){
-            usersLogin = users[i];
+            req.session.logueado = users[i];
             break;
         }
         };
-
-        res.session.usersLogin = usersLogin;
 }
 
 

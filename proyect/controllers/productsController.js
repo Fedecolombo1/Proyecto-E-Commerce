@@ -23,6 +23,23 @@ var controller = {
         }
         res.render('productDetail',{product, products, log});
     },
+    /* 
+    productDetail: function(req, res, next){
+    db.Product.findByPk(req.params.id)
+    .then(function(product){
+        db.product.findAll()
+        .then(function(products){
+            var log = 0
+            if(req.session.logueado != undefined){
+                log = 1
+            }
+            res.render("productDetail",{product, products, log})
+        })
+    })
+},
+    */
+
+
     delete: function(req, res, next) {
         console.log(products);
         products = products.filter(product => product.id != req.params.id)
@@ -32,6 +49,18 @@ var controller = {
         
         res.render("home")   
     },
+    /* 
+    delete: function(req, res, next){
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/home')
+    },
+    */
+
+
     edit: function(req,res, next) {
         for(var i = 0;i < products.length; i++){
             if(products[i].id == req.params.id){
@@ -40,6 +69,15 @@ var controller = {
         }
         res.render("productEdit", {product})
     },
+    /* 
+    edit: function(req, res, next){
+        db.Product.findByPk(req.params.id)
+        .then(function(product){
+            res.render('productEdit',{product})
+        })
+    },
+    */
+
 
     update: function(req,res, next) {
         var updateProduct = {
@@ -62,6 +100,22 @@ var controller = {
         
         res.render("home")
     },
+    /*
+    update: function(req, res, next){
+        db.Product.update(req.body,{
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(result => {
+            res.redirect('/home')
+        })
+    },
+    */
+
+    productAdd: function(req, res, next) {
+        res.render('productAdd')
+    },
 
     productCreate: function(req,res,next){
 
@@ -81,6 +135,19 @@ var controller = {
         fs.writeFileSync("./database/products.json", products);
         res.render("home")
     },
+    /*
+    store: function(req, res, next){
+        var errors = validationResult(req)
+        
+        if(errors.isEmpty()){
+            db.Product.create(req.body)
+            res.redirect('/home')
+        } else {
+            res.render('productCreate', {errors:errors.errors})
+        }
+    },
+    */
+
 
 }
 
