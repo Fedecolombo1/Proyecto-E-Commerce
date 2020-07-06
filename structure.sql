@@ -169,6 +169,34 @@ LOCK TABLES `is_admin` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `product_size`
+--
+
+DROP TABLE IF EXISTS `product_size`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product_size` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT NULL,
+  `size_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_order_size_id_idx` (`size_id`),
+  KEY `fk_psize_id_idx` (`product_id`),
+  CONSTRAINT `fk_order_size_id` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_psize_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_size`
+--
+
+LOCK TABLES `product_size` WRITE;
+/*!40000 ALTER TABLE `product_size` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product_size` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -198,6 +226,29 @@ CREATE TABLE `products` (
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `size`
+--
+
+DROP TABLE IF EXISTS `size`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `size` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `size_selected` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size`
+--
+
+LOCK TABLES `size` WRITE;
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -243,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-02 23:12:57
+-- Dump completed on 2020-07-05 22:57:45
