@@ -79,7 +79,6 @@ insert into cart_details (id, quantity, price, product_id, cart_id) values (1, 7
 insert into cart_details (id, quantity, price, product_id, cart_id) values (2, 18, '$0.87', 2, 2);
 insert into cart_details (id, quantity, price, product_id, cart_id) values (3, 53, '$9.10', 3, 3);
 insert into cart_details (id, quantity, price, product_id, cart_id) values (4, 55, '$6.29', 4, 4);
-insert into cart_details (id, quantity, price, product_id,
 /*!40000 ALTER TABLE `cart_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +166,7 @@ insert into images_products (id, ruta, product_id) values (4, '/images/products/
 insert into images_products (id, ruta, product_id) values (5, '/images/products/DROP_HH.jpg', 3);
 insert into images_products (id, ruta, product_id) values (6, '/images/products/DROP_HH_BACK.jpg', 3);
 insert into images_products (id, ruta, product_id) values (7, '/images/products/BLACK_T-SHIRT.jpg', 4);
-insert into images_products (id, ruta, product_id) values (8, '/images/products/BLACK_T-SHIRT_BACK.jpg', 84;
+insert into images_products (id, ruta, product_id) values (8, '/images/products/BLACK_T-SHIRT_BACK.jpg', 84);
 insert into images_products (id, ruta, product_id) values (9, '/images/products/BASIC_LOGO.jpg', 5);
 insert into images_products (id, ruta, product_id) values (10, '/images/products/BASIC_LOGO_BACK.jpg', 5);
 insert into images_products (id, ruta, product_id) values (11, '/images/products/FIRST_DROP_HOODIE.jpg', 6);

@@ -23,6 +23,14 @@ module.exports = (sequelize, dataType) => {
             as: 'cart',
             foreignKey: 'cart_id'
         })
+        User.belongsTo(models.Image_user, {
+            as: "image_user",
+            foreignKey: "fk_images_users_id"
+        })
+        User.belongsTo(models.Is_admin, {
+            as: "is_admin",
+            foreignKey: "fk_is_admin_id"
+        })
     }
 
     return User

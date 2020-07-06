@@ -3,6 +3,9 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
+const Sequelize = require('sequelize');
+const sequelize = require('../database');
+const db = require("../database/models")
 
 var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
 
@@ -38,7 +41,15 @@ var controller = {
 
         res.redirect('/')
     },
-
+    /*startLogin: function (req,res, next){
+        var logueado = 0
+        if(req.session.logueado != undefined){
+          logueado = 1
+        }
+        var errors = validationResult(req);
+        var usersLogin = '';
+        db.
+    },*/
 // por ahora no existe el log-out botton (es para el futuro)
 
     logout: function(req, res, next){
@@ -86,6 +97,17 @@ users = JSON.stringify(users);
     res.render("home")
 }
 },
+    /* createUser: function(req, res, next){
+        var errors = validationResult(req)
+        var body = req.body;
+        
+        if(errors.isEmpty()){
+            db.Product.create(req.body)
+            res.redirect('/home')
+        } else {
+            res.render('register', {errors: errors.errors, body})
+        }
+    }, */
 
 }
 

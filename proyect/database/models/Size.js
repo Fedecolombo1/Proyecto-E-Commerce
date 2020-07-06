@@ -21,6 +21,10 @@ module.exports = (sequelize, dataType) => {
             other_id: 'product_id',
             timestamps: false
         })
+        Size.belongsTo(models.product_size, {
+            as: 'product_size',
+            foreignKey: 'product_size_id'
+        })
     }
 
     return Size

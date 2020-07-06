@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const Sequelize = require('sequelize');
+const sequelize = require('../database');
+const db = require("../database/models")
 
 var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
 
@@ -8,7 +11,7 @@ var productsESSENCE = products.filter(product => product.category == "ESSENCE");
 var productsBASIC = products.filter(product => product.category == "BASIC");
 
 var controller = {
-    productDetail: function(req, res, next) {
+    /*productDetail: function(req, res, next) {
         for(var i = 0;i < products.length; i++){
             if(products[i].id == req.params.id){
                 var product = products[i]
@@ -22,11 +25,12 @@ var controller = {
             log = 1
         }
         res.render('productDetail',{product, products, log});
-    },
-    /* 
+    },*/
+    
     productDetail: function(req, res, next){
     db.Product.findByPk(req.params.id)
     .then(function(product){
+        console.log(product)
         db.product.findAll()
         .then(function(products){
             var log = 0
@@ -37,7 +41,7 @@ var controller = {
         })
     })
 },
-    */
+    
 
 
     delete: function(req, res, next) {
