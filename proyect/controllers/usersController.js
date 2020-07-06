@@ -3,8 +3,6 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:')
 
 const db = require('../database/models/index');
 

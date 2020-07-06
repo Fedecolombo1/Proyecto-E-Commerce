@@ -1,7 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:')
 
 const db = require('../database/models/index')
 
