@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
-const sequelize = require('../database');
-const db = require("../database/models")
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory:')
+
+const db = require('../database/models/index')
 
 var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
 

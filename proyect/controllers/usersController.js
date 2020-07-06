@@ -3,9 +3,11 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
-const Sequelize = require('sequelize');
-const sequelize = require('../database');
-const db = require("../database/models")
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory:')
+
+const db = require('../database/models/index');
+
 
 var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
 
@@ -48,7 +50,22 @@ var controller = {
         }
         var errors = validationResult(req);
         var usersLogin = '';
-        db.
+        db.User.findAll()
+        .then(function(users){
+            for(var i=0; i= users.length; i++){
+                if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)){
+                    usersLogin = users[i];
+                    break;
+            }
+            if(usersLogin == undefined){
+            return res.render('login', {errors: [
+                {msg: 'Se produjo un error al iniciar sesión. Verifique el correo electrónico o la contraseña.'}
+            ]});
+        };
+
+        res.redirect('/')
+        }
+        })
     },*/
 // por ahora no existe el log-out botton (es para el futuro)
 

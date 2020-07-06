@@ -7,6 +7,7 @@ const session = require("express-session");
 
 
 
+
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
 var productsRouter = require("./routes/products")
