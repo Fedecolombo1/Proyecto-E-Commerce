@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const db = require('../database/models/index')
+const db = require('../database/models/')
 
 var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
 
@@ -30,7 +30,7 @@ var controller = {
     db.Product.findByPk(req.params.id)
     .then(function(product){
         console.log(product)
-        db.product.findAll()
+        db.Product.findAll()
         .then(function(products){
             var log = 0
             if(req.session.logueado != undefined){
@@ -43,7 +43,7 @@ var controller = {
     
 
 
-    delete: function(req, res, next) {
+    /* delete: function(req, res, next) {
         console.log(products);
         products = products.filter(product => product.id != req.params.id)
 
@@ -51,8 +51,8 @@ var controller = {
         fs.writeFileSync("./database/products.json", products);
         
         res.render("home")   
-    },
-    /* 
+    }, */
+     
     delete: function(req, res, next){
         db.Product.destroy({
             where: {
@@ -61,28 +61,28 @@ var controller = {
         })
         res.redirect('/home')
     },
-    */
+    
 
 
-    edit: function(req,res, next) {
+    /*edit: function(req,res, next) {
         for(var i = 0;i < products.length; i++){
             if(products[i].id == req.params.id){
                 var product = products[i]
             }
         }
         res.render("productEdit", {product})
-    },
-    /* 
+    },*/
+     
     edit: function(req, res, next){
         db.Product.findByPk(req.params.id)
         .then(function(product){
             res.render('productEdit',{product})
         })
     },
-    */
+    
 
 
-    update: function(req,res, next) {
+    /*update: function(req,res, next) {
         var updateProduct = {
             id: 1,
             name: req.body.name,
@@ -102,8 +102,8 @@ var controller = {
         fs.writeFileSync("./database/products.json", products);
         
         res.render("home")
-    },
-    /*
+    },*/
+    
     update: function(req, res, next){
         db.Product.update(req.body,{
             where: {
@@ -114,13 +114,13 @@ var controller = {
             res.redirect('/home')
         })
     },
-    */
+    
 
     productAdd: function(req, res, next) {
         res.render('productAdd')
     },
 
-    productCreate: function(req,res,next){
+    /*productCreate: function(req,res,next){
 
         var newProduct = {
             id: 8,
@@ -137,9 +137,9 @@ var controller = {
         products = JSON.stringify(products);
         fs.writeFileSync("./database/products.json", products);
         res.render("home")
-    },
-    /*
-    store: function(req, res, next){
+    },*/
+    
+    productCreate: function(req, res, next){
         var errors = validationResult(req)
         
         if(errors.isEmpty()){
@@ -149,7 +149,7 @@ var controller = {
             res.render('productCreate', {errors:errors.errors})
         }
     },
-    */
+    
 
 
 }

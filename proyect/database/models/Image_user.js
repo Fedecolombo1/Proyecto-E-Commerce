@@ -3,7 +3,7 @@ module.exports = (sequelize, dataType) => {
     alias = 'Image_user',
 
     cols = {
-        avatar: dataType.VARCHAR,
+        avatar: dataType.STRING,
     }
 
     config = {
@@ -12,10 +12,12 @@ module.exports = (sequelize, dataType) => {
     }
 
     var Image_user = sequelize.define(alias, cols, config)
+    
+    Image_user.associate = function(models){
         Image_user.belongsTo(models.User, {
             as: 'user',
             foreignKey: 'user_id'
         })
-
+    }
     return Image_user
 }

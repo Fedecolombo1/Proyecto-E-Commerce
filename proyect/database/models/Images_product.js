@@ -3,8 +3,8 @@ module.exports = (sequelize, dataType) => {
     alias = 'Images_product',
 
     cols = {
-        ruta: dataType.VARCHAR,
-        product_id: dataType.INT
+        ruta: dataType.STRING,
+        product_id: dataType.INTEGER
     }
 
     config = {
@@ -13,10 +13,12 @@ module.exports = (sequelize, dataType) => {
     }
 
     var Images_product = sequelize.define(alias, cols, config)
-        Images_product.belongsTo(models.Product, {
-            as: 'product',
-            foreignKey: 'product_id'
-        })
 
+    Images_product.associate = function(models){
+            Images_product.belongsTo(models.Product, {
+                as: 'product',
+                foreignKey: 'product_id'
+            })
+        }
     return Images_product
 }

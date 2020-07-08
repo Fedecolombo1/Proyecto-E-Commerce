@@ -54,24 +54,24 @@
       <% } %>
       <main class="container-fluid">
           <div class="col-12 mobile s">
-            <h3 class="m"><%= product.category %></h3>
+            <h3 class="m"><%= categoria.name %></h3>
           </div>
         </div>
     </main>
 
     <main class="container">
         <div class="row">
-          <h6 class="col-12 nuestrosProd desk"><%= product.category %></h6>
+          <h6 class="col-12 nuestrosProd desk"><%= categoria.name %></h6>
         </div>
         <div class="row">
           <section class="products">
-          <% for(var i = 0; i < productsFil.length; i++) { %>
-            <a class="col-6 col-lg-3 art test" href="/products/detail/<%= productsFil[i].id %>">
+          <% for(var i = 0; i < products.length; i++) { %>
+            <a class="col-6 col-lg-3 art test" href="/products/detail/<%= products[i].id %>">
               <article>
               <div class="row">
-                <img class="col-12" src=<%= productsFil[i].img %> onmouseover="this.src=<%= productsFil[i].imgBack %>;" onmouseout="this.src=<%= products96[i].img %>;" />
-                <p class="col-12 desc n"><%= productsFil[i].name %></p>
-                <p class="col-12 desc p">$<%= productsFil[i].price %></p>
+                <img class="col-12" src=<%= products[i].images.ruta %> onmouseover="this.src=<%= products[i].imgBack %>;" onmouseout="this.src=<%= products[i].images.ruta %>;" />
+                <p class="col-12 desc n"><%= products[i].name %></p>
+                <p class="col-12 desc p">$<%= products[i].price %></p>
               </div>
             </article>
             </a>

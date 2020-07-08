@@ -3,8 +3,8 @@ module.exports = (sequelize, dataType) => {
     alias = 'Product_size',
 
     cols = {
-        product_id: dataType.INT,
-        size_id: dataType.INT
+        product_id: dataType.INTEGER,
+        size_id: dataType.INTEGER
     }
 
     config = {

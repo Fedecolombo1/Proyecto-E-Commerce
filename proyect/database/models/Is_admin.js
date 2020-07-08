@@ -3,7 +3,7 @@ module.exports = (sequelize, dataType) => {
     alias = 'Is_admin',
 
     cols = {
-        name: dataType.VARCHAR,
+        name: dataType.STRING,
     }
 
     config = {

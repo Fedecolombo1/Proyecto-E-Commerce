@@ -5,7 +5,7 @@ var userMiddleware = require('../middlewares/usersMiddleware')
 
 /* GET home page. */
 router.get('/',homeController.home);
-router.get('/:category', homeController.list);
+router.get('/:category_id', homeController.list);
 
 
 module.exports = router;

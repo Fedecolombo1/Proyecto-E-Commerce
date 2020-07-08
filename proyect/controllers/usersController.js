@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
 
-const db = require('../database/models/index');
+const db = require('../database/models/')
 
 
 var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
@@ -18,7 +18,7 @@ var controller = {
         res.render('login')
     },
 
-    startLogin: function (req,res, next){
+    /* startLogin: function (req,res, next){
         var logueado = 0
         if(req.session.logueado != undefined){
           logueado = 1
@@ -40,8 +40,8 @@ var controller = {
         };
 
         res.redirect('/')
-    },
-    /*startLogin: function (req,res, next){
+    }, */
+    startLogin: function (req,res, next){
         var logueado = 0
         if(req.session.logueado != undefined){
           logueado = 1
@@ -64,7 +64,7 @@ var controller = {
         res.redirect('/')
         }
         })
-    },*/
+    },
 // por ahora no existe el log-out botton (es para el futuro)
 
     logout: function(req, res, next){
@@ -81,7 +81,7 @@ var controller = {
     },
 
     
-    createUser: function (req,res,next) {
+    /* createUser: function (req,res,next) {
         console.log(req.body);
         
     var errors = validationResult(req);
@@ -111,18 +111,19 @@ users = JSON.stringify(users);
     fs.writeFileSync("./database/users.json", users);
     res.render("home")
 }
-},
-    /* createUser: function(req, res, next){
+}, */
+     createUser: function(req, res, next){
         var errors = validationResult(req)
         var body = req.body;
         
         if(errors.isEmpty()){
-            db.Product.create(req.body)
+            console.log(req.body);
+            db.User.create(req.body)
             res.redirect('/home')
         } else {
             res.render('register', {errors: errors.errors, body})
         }
-    }, */
+    }, 
 
 }
 

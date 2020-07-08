@@ -3,10 +3,10 @@ module.exports = (sequelize, dataType) => {
     alias = 'Cart_details',
 
     cols = {
-        quantity: dataType.INT,
-        price: dataType.INT,
-        product_id: dataType.INT,
-        cart_id: dataType.INT,
+        quantity: dataType.INTEGER,
+        price: dataType.INTEGER,
+        product_id: dataType.INTEGER,
+        cart_id: dataType.INTEGER,
     }
 
     config = {
