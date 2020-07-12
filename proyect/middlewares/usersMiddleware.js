@@ -1,11 +1,13 @@
 const bcrypt = require("bcrypt")
 const fs = require("fs")
+const { validationResult } = require("express-validator")
 
 var users = JSON.parse(fs.readFileSync("./database/users.json"))
 
 var middleware = {
 
     login: function(req, res, next){
+        var errors = validationResult(req)
         var userFound = '';
             
         userFound = users.filter(function (user) {
@@ -24,7 +26,7 @@ var middleware = {
             
             res.render('home')
         } else {
-            res.render('login')
+            res.render('login', {errors:errors.errors})
         }
 
         

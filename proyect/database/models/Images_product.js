@@ -8,7 +8,7 @@ module.exports = (sequelize, dataType) => {
     }
 
     config = {
-        tablename: 'images_product',
+        tablename: 'images_products',
         timestamps: false
     }
 

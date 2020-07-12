@@ -8,6 +8,15 @@ body{
 
 }
 
+ul li{
+    text-align: center;
+    list-style:none;
+    color: #EA2027;
+}
+
+ul{
+    padding: 0px;
+}
 
 .container-fluid h1{
     float: left;

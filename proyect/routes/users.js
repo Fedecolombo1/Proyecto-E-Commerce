@@ -27,7 +27,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/login',usersMiddleware.guest,usersController.loginRender);
 
-router.post('/login', usersMiddleware.login,function(req, res, next) {
+router.post('/login', [check('email').isEmail().withMessage('Email invalido'),
+  check('password').isLength({min: 1}).withMessage('Contraseña invalida')] ,usersMiddleware.login, function(req, res, next) {
   res.render('home');
 });
 
