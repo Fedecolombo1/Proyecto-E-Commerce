@@ -25,7 +25,10 @@ router.get('/detail/:id', productsController.productDetail);
 
 router.get('/add', productsController.productAdd);
 
-router.post('/add',upload.any() , productsController.productCreate)
+router.post('/add',upload.any(),[
+  check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
+  check("price").isLength({min: 1}).withMessage("Completa el precio"),
+  ] , productsController.productCreate)
 
 router.get('/edit/:id', productsController.edit)
 

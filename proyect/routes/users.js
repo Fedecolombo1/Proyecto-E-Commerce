@@ -27,8 +27,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/login',usersMiddleware.guest,usersController.loginRender);
 
-router.post('/login', [check('email').isEmail().withMessage('Email invalido'),
-  check('password').isLength({min: 1}).withMessage('Contraseña invalida')] ,usersMiddleware.login, function(req, res, next) {
+router.post('/login', [check('email').isEmail().withMessage('Debes poner un Email'),
+  check('password').isLength({min: 1}).withMessage('Debes poner una Contraseña')] ,usersMiddleware.login, function(req, res, next) {
   res.render('home');
 });
 

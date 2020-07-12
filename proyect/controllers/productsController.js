@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const {check, validationResult, body} = require('express-validator');
 const db = require('../database/models/')
 
 var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
@@ -141,12 +141,13 @@ var controller = {
     
     productCreate: function(req, res, next){
         var errors = validationResult(req)
-        
+        var body = req.body
+
         if(errors.isEmpty()){
             db.Product.create(req.body)
             res.redirect('/home')
         } else {
-            res.render('productCreate', {errors:errors.errors})
+            res.render('productAdd', {errors:errors.errors, body})
         }
     },
     

@@ -38,7 +38,11 @@
                 
             <div class="textbox">
                 <i class="fas fa-box-open"></i>
-                <input type="text" placeholder="Nombre del Producto" name="name" value="">
+                <% if(typeof body == 'undefined'){ %>
+                    <input type="text" placeholder="Nombre" name="name" value=""> 
+                <% } else { %>
+                    <input type="text" placeholder="Nombre" name="name" value="<%= body.name %>"> 
+                <% } %>
             </div>
 
             <div class="textbox">
@@ -53,7 +57,11 @@
             
             <div class="textbox">
                 <i class="fas fa-dollar-sign"></i>
-                <input type="number" placeholder="Precio" name="price" value="">
+                <% if(typeof body == 'undefined'){ %>
+                    <input type="number" placeholder="Precio" name="price" value=""> 
+                <% } else { %>
+                    <input type="number" placeholder="Precio" name="price" value="<%= body.price %>"> 
+                <% } %>
             </div>
             
             <div class="textbox">
@@ -68,7 +76,21 @@
                 <input type="file" id="imagen" name="imgBack" accept="image/png, image/jpeg"/>
             </div>
 
-        
+            <% if(typeof errors != 'undefined') { %>
+                <ul style="padding-left: 10px;">
+                    <% for(let i = 0; i < errors.length; i++){ %>
+                    <li style="color: red; list-style-type: none;"> <i class="fas fa-exclamation"></i> <%= errors[i].msg %></li>
+                <% } %>
+                </ul>
+    
+            <% } %> 
+
+            <div class="errores">
+                <ul>
+
+                </ul>
+            </div>
+
             <div>
                 <input type="submit" class="btn" name="button" value="Añadir Producto">
             </div>
@@ -83,7 +105,7 @@
        
     </div>
 
-
+    <script src="/js/productAdd.js"></script>
 </div>
 </div>
 </div>
