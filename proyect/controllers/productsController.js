@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const {check, validationResult, body} = require('express-validator');
-const db = require('../database/models/')
+const db = require('../database/models/');
+const { ifError } = require('assert');
 
 var products = JSON.parse(fs.readFileSync("./database/products.json", {encoding: 'utf-8'}))
 
@@ -105,6 +106,10 @@ var controller = {
     },*/
     
     update: function(req, res, next){
+        var error = validationResult(req)
+        var body = req.body
+
+        if(error.isEmpty()){
         db.Product.update(req.body,{
             where: {
                 id: req.params.id
@@ -113,6 +118,9 @@ var controller = {
         .then(result => {
             res.redirect('/home')
         })
+    } else {
+        res.render('edit/:id', {errors:errors.errors, body})
+       }
     },
     
 

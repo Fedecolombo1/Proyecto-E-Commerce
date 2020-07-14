@@ -28,11 +28,16 @@ router.get('/add', productsController.productAdd);
 router.post('/add',upload.any(),[
   check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
   check("price").isLength({min: 1}).withMessage("Completa el precio"),
+  check('description').isLength({min: 25}).withMessage('Completa la descropcion, la descripcion debe tener al menos 25 caracters'),
   ] , productsController.productCreate)
 
 router.get('/edit/:id', productsController.edit)
 
-router.post('/edit/:id', productsController.update)
+router.post('/edit/:id', upload.any(), [
+  check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
+  check("price").isLength({min: 1}).withMessage("Completa el precio"),
+  check('description').isLength({min: 25}).withMessage('Completa la descropcion, la descripcion debe tener al menos 25 caracters')
+] ,productsController.update)
 
 router.post("/delete/:id", productsController.delete)
 
