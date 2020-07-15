@@ -69,7 +69,7 @@
             <a class="col-6 col-lg-3 art test" href="/products/detail/<%= products[i].id %>">
               <article>
               <div class="row">
-                <img class="col-12" src=<%= products[i].images.ruta %> onmouseover="this.src=<%= products[i].imgBack %>;" onmouseout="this.src=<%= products[i].images.ruta %>;" />
+                <img class="col-12 foto" src="<%= products[i].images[0].ruta %>"/>
                 <p class="col-12 desc n"><%= products[i].name %></p>
                 <p class="col-12 desc p">$<%= products[i].price %></p>
               </div>
@@ -81,7 +81,6 @@
         <div class="row">
       
     </main>
-  
     
   <%- include('partials/footer.ejs') %>
   

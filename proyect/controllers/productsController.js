@@ -60,7 +60,7 @@ var controller = {
                 id: req.params.id
             }
         })
-        res.redirect('/home')
+        res.redirect('/')
     },
     
 
@@ -116,7 +116,7 @@ var controller = {
             }
         })
         .then(result => {
-            res.redirect('/home')
+            res.redirect('/')
         })
     } else {
         res.render('edit/:id', {errors:errors.errors, body})
