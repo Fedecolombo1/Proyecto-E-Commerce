@@ -158,7 +158,55 @@ var controller = {
             res.render('productAdd', {errors:errors.errors, body})
         }
     },
-    
+    cart: function(){
+        //recibimos el id del producto del form
+        var productId = req.body.productId
+        console.log(productId);
+        //tenemos de la session el id del usuario
+        var userId = req.session.logueado.id
+        console.log(userId);
+        //puede tener muchos carritos (muchos cerrados y uno abierto)
+        //si no lo tiene lo creamos sino tomamos el id
+        db.Cart.findOne({
+            where:  {user_id: userId,
+                     order_status: "open"
+                    }
+        })
+        .then(function(carrito){
+            if(carrito){
+                var cartId = carrito.id
+            } else {
+                db.Cart.create({
+                    order_date: Date.now,
+                    order_adress: "",
+                    order_status: "open",
+                    total: 0,
+                    user_id: userId
+                })
+                .then(cart => {
+                    var cartId = cart.id
+                })
+            }
+        
+            
+            /*carritos.forEach(carrito => {
+                if(carrito.id == userId && carrito.order_status == "open"){
+
+                } else {
+                    db.Cart.create({
+                        order_date: Date.now,
+                        order_adress: "",
+                        order_status: "open",
+                        total: 0,
+                        user_id: userId
+                    })
+                    .then(cart => {
+                        
+                    })
+                }
+            })*/
+        })
+    }
 
 
 }

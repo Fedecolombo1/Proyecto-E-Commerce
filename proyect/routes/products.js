@@ -40,6 +40,8 @@ router.post('/edit/:id', upload.any(), [
 
 router.post("/delete/:id", productsController.delete)
 
+router.post("/addToCart/:id", productsController.cart)
+
 router.get('/cart', function(req, res, next) {
   res.render('productCart');
 });
