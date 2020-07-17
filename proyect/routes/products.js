@@ -42,8 +42,6 @@ router.post("/delete/:id", productsController.delete)
 
 router.post("/addToCart/:id", productsController.cart)
 
-router.get('/cart', function(req, res, next) {
-  res.render('productCart');
-});
+router.get('/cart', productsController.cartDetail);
 
 module.exports = router;

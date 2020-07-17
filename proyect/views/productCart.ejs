@@ -50,71 +50,26 @@
 
 
                   <tbody>
+                  <% for(var i = 0; i < cartDetails.length; i++){
 
                     <tr>
                       <th scope="row" class="border-0">
                         <div class="p-2">
-                          <img class="img" src="https://static.wixstatic.com/media/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_da232148004f459bb3b49b0840d7ed4e~mv2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
+                          <img class="img" src="<%= cartDetails[i].product.img %>" alt="" width="70" class="img-fluid rounded shadow-sm">
                           <div class="ml-3 d-inline-block align-middle">
-                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">"96" BLACK DROP</a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">Sudadera negra talle M</span>
+                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= cartDetails[i].product.name %></a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">Sudadera negra talle M</span>
                           </div>
                         </div>
                       </th>
 
 
                       <td class="border-0  align-middle product-quantity">
-                        <input class="cantidadNumerico"type="number" value="2" min="1">
+                        <input class="cantidadNumerico"type="number" value="1" min="1">
                       </td>
-                      <td class="border-0 align-middle"><strong>$2.500</strong></td>
+                      <td class="border-0 align-middle"><strong>$<%= cartDetails[i].product.price%></strong></td>
                       <td class="border-0 align-middle"><strong>$5.000</strong></td>
                     </tr>
-
-
-
-
-                    <tr>
-                      <th scope="row">
-                        <div class="p-2">
-                          <img class="img" src="https://static.wixstatic.com/media/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_e23d175ea5e8492c9a183af5df112c38~mv2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
-                          <div class="ml-3 d-inline-block align-middle">
-                            <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">MUERTE EN EL AGUA T-SHIRT</a></h5><span style="color: rgb(223, 82, 0)" class="font-weight-normal font-italic">Camiseta negra talle M</span>
-                          </div>
-                        </div>
-                      </th>
-
-
-
-                      
-                      <td class="align-middle product-quantity">
-                        <input class="cantidadNumerico"type="number" value="3" min="1">
-                      </td>
-                      <td class="align-middle"><strong>$1.800</strong></td>
-                      <td class="align-middle"><strong>$5.400</strong></td>
-                      </td>
-                    </tr>
-
-
-
-
-
-
-                    <tr>
-                      <th scope="row">
-                        <div class="p-2">
-                          <img class="img" src="https://static.wixstatic.com/media/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_866c065093fe49c9bbefa4cb38ffba7c~mv2_d_1600_1600_s_2.webp" alt="" width="70" class="img-fluid rounded shadow-sm">
-                          <div class="ml-3 d-inline-block align-middle">
-                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">"96" ORANGE HOODIE</a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic">Sudadera naranja talle M</span>
-                          </div>
-                        </div>
-                        
-                        <td class="align-middle product-quantity">
-                          <div> <input class="cantidadNumerico"type="number" value="1" min="1"> </div>
-                          
-                        </td>
-                        <td class="align-middle"><strong>$2.500</strong></td>
-                        <td class="align-middle"><strong>$2.500</strong></td>
-                        </td>
-                    </tr>
+                    <% } %>
 
                     
                     

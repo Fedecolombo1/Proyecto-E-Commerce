@@ -3,15 +3,22 @@ module.exports = (sequelize, dataType) => {
     alias = 'Cart',
 
     cols = {
+        cart_id: {
+            type: dataType.INTEGER,
+            primaryKey:true,
+            autoIncrement:true,
+            field: "id"
+            },
         order_date: dataType.DATE,
-        order_adress: dataType.STRING,
-        order_satus: dataType.STRING,
+        order_address: dataType.STRING,
+        order_status: dataType.STRING,
         total: dataType.INTEGER,
     }
 
     config = {
-        tablename: 'users',
-        timestamps: false
+        tablename: 'cart',
+        timestamps: false,
+        freezeTableName: true
     }
 
     var Cart = sequelize.define(alias, cols, config)
@@ -19,12 +26,16 @@ module.exports = (sequelize, dataType) => {
     Cart.associate = function(models){
         Cart.belongsTo(models.User, {
             as: 'user',
-            foreignKey: 'fk_user_id'
+            foreignKey: 'user_id'
         })
-        Cart.belongsTo(models.Cart_details, {
-            as: 'cart_detail',
-            foreignKey: 'cart_details_id'
-        })
+        Cart.belongsToMany(models.Product,{
+            as: 'product',
+            through: "cart_details",
+            foreignKey: "cart_id",
+            otherKey: "product_id",
+            timestamps: false
+        });
+
     }
 
     return Cart

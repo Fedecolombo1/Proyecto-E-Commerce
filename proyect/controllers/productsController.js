@@ -187,7 +187,15 @@ var controller = {
                     var cartId = cart.id
                 })
             }
-        
+            db.Product.findByPk(productId)
+            .then(product => {
+                db.Cart_details.create({
+                    quantity: 1,
+                    price: product.price,
+                    product_id: product.id,
+                    cart_id: cartId
+                })
+            })
             
             /*carritos.forEach(carrito => {
                 if(carrito.id == userId && carrito.order_status == "open"){
@@ -205,6 +213,30 @@ var controller = {
                     })
                 }
             })*/
+        })
+    },
+    cartDetail: function(req, res, next) {
+        //busco si hay algun carrito abierto
+        var userId = 2
+        db.Cart.findOne({
+            where:  {user_id: userId,
+                     order_status: "open"
+                    }
+        })
+        .then(cart => {
+            console.log(cart.id);
+            if(cart){
+                var cartId = cart.cart_id
+                db.Cart_details.findAll({
+                    where: {cart_id: cartId}
+                })
+                .then(cartDetails => {
+                    console.log(cartDetails);
+                    res.render("productCart",{cartDetails})
+                })
+            } else {
+                res.send("carrito vacio")
+            }
         })
     }
 

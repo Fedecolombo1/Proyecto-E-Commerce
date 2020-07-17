@@ -25,11 +25,11 @@ module.exports = (sequelize, dataType) => {
         })
         User.belongsTo(models.Image_user, {
             as: "image_user",
-            foreignKey: "fk_images_users_id"
+            foreignKey: "images_users_id"
         })
         User.belongsTo(models.Is_admin, {
             as: "is_admin",
-            foreignKey: "fk_is_admin_id"
+            foreignKey: "is_admin_id"
         })
     }
 
