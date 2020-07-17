@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('proyect:server');
 var http = require('http');
+const bcrypt = require("bcrypt-nodejs");
 
 /**
  * Get port from environment and store in Express.

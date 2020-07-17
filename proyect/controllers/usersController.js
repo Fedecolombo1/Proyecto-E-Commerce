@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt-nodejs")
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
 

@@ -1,8 +1,8 @@
-const bcrypt = require("bcrypt")
-const fs = require("fs")
-const { validationResult } = require("express-validator")
+const bcrypt = require("bcrypt-nodejs");
+const fs = require("fs");
+const { validationResult } = require("express-validator");
 
-var users = JSON.parse(fs.readFileSync("./database/users.json"))
+var users = JSON.parse(fs.readFileSync("./database/users.json"));
 
 var middleware = {
 
