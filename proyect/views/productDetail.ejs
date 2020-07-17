@@ -26,10 +26,10 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src=<%= product.img %> alt="...">
+                    <img src=<%= product.images[0].ruta %> alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src=<%= product.imgBack %> class="d-block w-100" alt="...">
+                    <img src=<%= product.images[1].ruta %> class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
                     <img src="https://static.wixstatic.com/media/0ef68e_a732f311752a457e8a477c8861342587~mv2.png/v1/fill/w_630,h_630,al_c,q_90,usm_0.66_1.00_0.01/0ef68e_a732f311752a457e8a477c8861342587~mv2.webp" class="d-block w-100" alt="...">
@@ -90,7 +90,7 @@
                 <a class="col-6 col-lg-3 art" href="/products/detail/<%= products[i].id %>">
                   <article>
                   <div class="row">
-                    <img class="col-12" src=<%= products[i].img %> onmouseover="this.src=<%= products[i].imgBack %>;" onmouseout="this.src=<%= products[i].img %>;" />
+                    <img class="col-12" src="<%= products[i].images[0].ruta %>"/>
                     <p class="col-12 desc n"><%= products[i].name %></p>
                     <p class="col-12 desc p">$<%= products[i].price %></p>
                   </div>

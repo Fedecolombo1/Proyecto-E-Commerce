@@ -28,10 +28,10 @@ var controller = {
     },*/
     
     productDetail: function(req, res, next){
-    db.Product.findByPk(req.params.id)
+    db.Product.findByPk(req.params.id,{include: ["images"]})
     .then(function(product){
         console.log(product)
-        db.Product.findAll()
+        db.Product.findAll({include: ["images"]})
         .then(function(products){
             var log = 0
             if(req.session.logueado != undefined){
