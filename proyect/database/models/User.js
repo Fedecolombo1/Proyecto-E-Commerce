@@ -1,14 +1,23 @@
+const { data } = require("jquery")
+
 module.exports = (sequelize, dataType) => {
 
     alias = 'User',
 
     cols = {
+        user_id: {
+            type: dataType.INTEGER,
+            primaryKey:true,
+            autoIncrement:true,
+            field: "id"
+            },
         name: dataType.STRING,
         last_name: dataType.STRING,
         email: dataType.STRING,
         password: dataType.STRING,
         dateOfBirth: dataType.DATE,
-        phoneNumber: dataType.INTEGER
+        phoneNumber: dataType.INTEGER,
+        is_admin: dataType.INTEGER
     }
 
     config = {
@@ -26,10 +35,6 @@ module.exports = (sequelize, dataType) => {
         User.belongsTo(models.Image_user, {
             as: "image_user",
             foreignKey: "images_users_id"
-        })
-        User.belongsTo(models.Is_admin, {
-            as: "is_admin",
-            foreignKey: "is_admin_id"
         })
     }
 
