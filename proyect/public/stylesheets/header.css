@@ -245,3 +245,14 @@ div.row.col-4.col-lg-1.buscadorMobile {
         justify-content: center;
     }
 }
+
+    .quantity{
+        border-radius: 25px;
+        color: pink;
+        position: relative;
+    }
+
+    .quantityTest{
+        z-index: 10;
+        position: absolute;
+    }
