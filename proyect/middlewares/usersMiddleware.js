@@ -1,33 +1,38 @@
 const bcrypt = require("bcrypt-nodejs");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
+const db = require('../database/models/')
 
-var users = JSON.parse(fs.readFileSync("./database/users.json"));
+var userss = JSON.parse(fs.readFileSync("./database/users.json"));
 
 var middleware = {
 
     login: function(req, res, next){
         var errors = validationResult(req)
         var userFound = '';
-            
-        userFound = users.filter(function (user) {
-            return user.email == req.body.email &&
-            bcrypt.compareSync(req.body.password, user.password)            
-        });
         
-        if(userFound != ''){
-            req.session.logueado = userFound
-            //console.log(userFound);
+        db.User.findAll()
+        .then(function(users){
+            userFound = users.filter(function (user) {
+                return user.email == req.body.email &&
+                bcrypt.compareSync(req.body.password, user.password)            
+            });
             
-            if(req.body.recuerdame != undefined){
-                res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
+            if(userFound != ''){
+                req.session.logueado = userFound
+                //console.log(userFound);
+                
+                if(req.body.recuerdame != undefined){
+                    res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
+                }
+                
+                
+                res.redirect('/')
+            } else {
+                res.render('login', {errors:errors.errors})
             }
-            
-            
-            res.render('home')
-        } else {
-            res.render('login', {errors:errors.errors})
-        }
+        })
+        
 
         
 

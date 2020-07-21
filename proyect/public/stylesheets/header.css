@@ -183,7 +183,7 @@ div.row.col-4.col-lg-1.buscadorMobile {
         border: 1px solid black;
         border-radius: 10px;
         background-color: white;
-        align-items: center;
+        align-items: left;
     }
     .fa-search.desk {
         margin-right: 5px;
