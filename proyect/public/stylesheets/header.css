@@ -140,6 +140,20 @@ div.row.col-4.col-lg-1.buscadorMobile {
 .s {
     border-bottom: 1px solid #ced6e0;
 }
+
+.quantity{
+    border-radius: 25px;
+    color: pink;
+    position: relative;
+}
+
+.quantityTest{
+    z-index: 10;
+    position: absolute;
+    background-color: cornflowerblue;
+    border-radius: 25px;
+}
+
 @media(min-width: 1024px){
     .fa-bars {
         display: none;
@@ -160,6 +174,9 @@ div.row.col-4.col-lg-1.buscadorMobile {
         font-size: 42px;
     }
     .mobile {
+        display: none;
+    }
+    .buscador.mobile {
         display: none;
     }
     .desk{
@@ -245,14 +262,3 @@ div.row.col-4.col-lg-1.buscadorMobile {
         justify-content: center;
     }
 }
-
-    .quantity{
-        border-radius: 25px;
-        color: pink;
-        position: relative;
-    }
-
-    .quantityTest{
-        z-index: 10;
-        position: absolute;
-    }
