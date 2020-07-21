@@ -140,6 +140,18 @@ div.row.col-4.col-lg-1.buscadorMobile {
 .s {
     border-bottom: 1px solid #ced6e0;
 }
+
+.quantity{
+    border-radius: 25px;
+    color: pink;
+    position: relative;
+}
+
+.quantityTest{
+    z-index: 10;
+    position: absolute;
+}
+
 @media(min-width: 1024px){
     .fa-bars {
         display: none;
@@ -184,6 +196,12 @@ div.row.col-4.col-lg-1.buscadorMobile {
         border-radius: 10px;
         background-color: white;
         align-items: center;
+    }
+    .buscador.mobile{
+        display: none;
+    }
+    .buscadorMobile{
+        display: block;
     }
     .fa-search.desk {
         margin-right: 5px;
@@ -246,13 +264,4 @@ div.row.col-4.col-lg-1.buscadorMobile {
     }
 }
 
-    .quantity{
-        border-radius: 25px;
-        color: pink;
-        position: relative;
-    }
-
-    .quantityTest{
-        z-index: 10;
-        position: absolute;
-    }
+    
