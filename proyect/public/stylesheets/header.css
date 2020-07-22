@@ -9,7 +9,7 @@ main {
 }
 header {
     border-bottom: 2px solid rgb(223, 82, 0);
-    background-color: rgb(8, 8, 8);
+    background-color: black;
     height: 70px;
     box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
     margin-bottom: 10px;
@@ -19,6 +19,9 @@ header {
 }
 div.row.header {
     height: 70px;
+}
+.row.col-1.col-lg-3.buscadorMobile {
+    display: none;
 }
 i.header {
     color: white;
@@ -42,7 +45,7 @@ div.col-6.t {
 }
 
 h3.t {
-    text-align: start;
+    text-align: center;
     font-family: 'Archivo Black', sans-serif;
     margin-bottom: 0px;
 }
@@ -141,15 +144,20 @@ div.row.col-4.col-lg-1.buscadorMobile {
     border-bottom: 1px solid #ced6e0;
 }
 
-.quantity{
-    border-radius: 25px;
-    color: pink;
-    position: relative;
-}
 
 .quantityTest{
-    z-index: 10;
-    position: absolute;
+    background-color: rgb(231, 85, 0);
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: 'Archivo Black', sans-serif;
+    
 }
 
 @media(min-width: 1024px){
@@ -203,7 +211,7 @@ div.row.col-4.col-lg-1.buscadorMobile {
     .buscador.mobile{
         display: none;
     }
-    .buscadorMobile{
+    .row.col-1.col-lg-3.buscadorMobile {
         display: block;
     }
     .fa-search.desk {
@@ -265,6 +273,11 @@ div.row.col-4.col-lg-1.buscadorMobile {
     div.row.col-4.col-lg-1.buscadorMobile {
         justify-content: center;
     }
+    .fas.fa-shopping-cart.carrito.desk.header{
+        text-align: end;
+        margin-right: 19px;
+    }
+    
 }
 
     

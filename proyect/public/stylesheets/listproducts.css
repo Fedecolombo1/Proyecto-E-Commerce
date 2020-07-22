@@ -5,3 +5,12 @@
 .products{
     transition: 200ms;
 }
+p {
+    text-align: center;
+}
+.desc.n {
+    font-size: 17px;
+}
+.desc.p {
+    color: red;
+}

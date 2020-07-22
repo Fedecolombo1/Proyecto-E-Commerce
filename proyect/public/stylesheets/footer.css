@@ -10,6 +10,7 @@ footer.container-fluid {
 div.row{
     display: flex;
     justify-content: center;
+    margin: 0px;
 }
 div.col-6{
     text-align: center
@@ -28,9 +29,21 @@ i.footer {
 p.footer {
     color:white
 }
-
-
 .ulcss{
     padding-left: 0px;
-    margin-top: 6px;
+    margin: 0px;
+}
+.desk {
+    display: none;
+}
+.mobile {
+    display: block;
+}
+@media(min-width: 1024px){
+    .desk {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
 }
