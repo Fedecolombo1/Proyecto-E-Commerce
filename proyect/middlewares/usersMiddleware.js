@@ -11,26 +11,34 @@ var middleware = {
         var errors = validationResult(req)
         var userFound = '';
         
-        db.User.findAll()
-        .then(function(users){
-            userFound = users.filter(function (user) {
-                return user.email == req.body.email &&
-                bcrypt.compareSync(req.body.password, user.password)            
-            });
-            
-            if(userFound != ''){
-                req.session.logueado = userFound
-                //console.log(userFound);
+        db.User.findOne({
+            where: {email: req.body.email}
+        })
+        .then(function(user){
+            //comparar si encontro
+            if(user){
+                console.log(req.body.password);
+                console.log(user.password);
+                if(bcrypt.compareSync(req.body.password, user.password)){
+                    
+                    userFound = user
+                    req.session.logueado = userFound
+                    //console.log(userFound);
                 
-                if(req.body.recuerdame != undefined){
+                    if(req.body.recuerdame != undefined){
                     res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
+                    next()
+                    }
                 }
                 
-                
-                res.redirect('/')
             } else {
+            //si no encontro
+                userFound = ""
                 res.render('login', {errors:errors.errors})
-            }
+            }          
+        })
+        .catch(function(e){
+            console.log(e);
         })
         
 

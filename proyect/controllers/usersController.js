@@ -117,9 +117,13 @@ users = JSON.stringify(users);
         var body = req.body;
         
         if(errors.isEmpty()){
-            console.log(req.body);
-            db.User.create(req.body)
-            res.redirect('/home')
+            var user = req.body
+            user.password = bcrypt.hashSync(req.body.password,10)
+            db.User.create(user)
+            .then(function(userLog){
+                req.session.logueado = userLog
+                res.redirect('/')
+            })
         } else {
             res.render('register', {errors: errors.errors, body})
         }

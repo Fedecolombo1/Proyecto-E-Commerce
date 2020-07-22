@@ -195,6 +195,7 @@ var controller = {
                     product_id: product.id,
                     cart_id: cartId
                 })
+                res.redirect("/products/detail/" + productId)
             })
             
             /*carritos.forEach(carrito => {
@@ -228,7 +229,9 @@ var controller = {
             if(cart){
                 var cartId = cart.cart_id
                 db.Cart_details.findAll({
-                    where: {cart_id: cartId}
+                    where: {cart_id: cartId},
+                    include:[{ all: true, nested: true }]
+    
                 })
                 .then(cartDetails => {
                     console.log(cartDetails);

@@ -16,11 +16,12 @@ h6.desc {
 }
 .desc.n {
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
 }
 .desc.p {
     text-align: center;
     color: red;
+    font-size: 16px;
 }
 h6.precio {
     font-size: 24px;
