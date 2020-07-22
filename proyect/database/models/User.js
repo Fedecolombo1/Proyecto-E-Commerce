@@ -32,10 +32,6 @@ module.exports = (sequelize, dataType) => {
             as: 'cart',
             foreignKey: 'cart_id'
         })
-        User.belongsTo(models.Image_user, {
-            as: "image_user",
-            foreignKey: "images_users_id"
-        })
     }
 
     return User

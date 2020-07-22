@@ -50,12 +50,12 @@
 
 
                   <tbody>
-                  <% for(var i = 0; i < cartDetails.length; i++){
+                  <% for(var i = 0; i < cartDetails.length; i++){ %>
 
                     <tr>
                       <th scope="row" class="border-0">
                         <div class="p-2">
-                          <img class="img" src="<%= cartDetails[i].product.img %>" alt="" width="70" class="img-fluid rounded shadow-sm">
+                          <img class="img" src="<%= cartDetails[i].product.images[0].ruta %>" alt="" width="70" class="img-fluid rounded shadow-sm">
                           <div class="ml-3 d-inline-block align-middle">
                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= cartDetails[i].product.name %></a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">Sudadera negra talle M</span>
                           </div>
@@ -66,7 +66,7 @@
                       <td class="border-0  align-middle product-quantity">
                         <input class="cantidadNumerico"type="number" value="1" min="1">
                       </td>
-                      <td class="border-0 align-middle"><strong>$<%= cartDetails[i].product.price%></strong></td>
+                      <td class="border-0 align-middle"><strong>$<%= cartDetails[i].product.price %></strong></td>
                       <td class="border-0 align-middle"><strong>$5.000</strong></td>
                     </tr>
                     <% } %>

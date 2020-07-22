@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 const db = require('../database/models/')
@@ -17,18 +17,16 @@ var middleware = {
         .then(function(user){
             //comparar si encontro
             if(user){
-                console.log(req.body.password);
-                console.log(user.password);
-                if(bcrypt.compareSync(req.body.password, user.password)){
-                    
-                    userFound = user
-                    req.session.logueado = userFound
+                
+                if(bcrypt.compareSync(req.body.password, user.password) == true){
+                    console.log(user);
+                    req.session.logueado = user
                     //console.log(userFound);
                 
                     if(req.body.recuerdame != undefined){
                     res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
-                    next()
                     }
+                    next()
                 }
                 
             } else {
@@ -36,9 +34,6 @@ var middleware = {
                 userFound = ""
                 res.render('login', {errors:errors.errors})
             }          
-        })
-        .catch(function(e){
-            console.log(e);
         })
         
 
