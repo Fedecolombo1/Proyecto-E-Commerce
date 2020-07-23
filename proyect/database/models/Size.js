@@ -3,12 +3,13 @@ module.exports = (sequelize, dataType) => {
     alias = 'Size',
 
     cols = {
-        talle: dataType.STRING
+        size_selected: dataType.STRING
     }
 
     config = {
-        tablename: 'sizes',
-        timestamps: false
+        tablename: 'size',
+        timestamps: false,
+        freezeTableName: true
     }
 
     var Size = sequelize.define(alias, cols, config)

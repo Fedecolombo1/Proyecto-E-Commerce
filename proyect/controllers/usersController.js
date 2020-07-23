@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require("bcrypt-nodejs")
+const bcrypt = require("bcryptjs")
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
 
@@ -115,13 +115,14 @@ users = JSON.stringify(users);
      createUser: function(req, res, next){
         var errors = validationResult(req)
         var body = req.body;
-        
+        console.log(req.body);
         if(errors.isEmpty()){
-            var user = req.body
-            user.password = bcrypt.hashSync(req.body.password,10)
-            db.User.create(user)
+            var userNew = req.body
+            userNew.password = bcrypt.hashSync(req.body.password, 10)
+            db.User.create(userNew)
             .then(function(userLog){
-                req.session.logueado = userLog
+                console.log(userLog);
+                req.session.logueado = userLog[0]
                 res.redirect('/')
             })
         } else {

@@ -159,8 +159,9 @@ var controller = {
         }
     },
     cart: function(){
+        console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         //recibimos el id del producto del form
-        var productId = req.body.productId
+        var productId = req.params.id
         console.log(productId);
         //tenemos de la session el id del usuario
         var userId = req.session.logueado.id
@@ -195,7 +196,7 @@ var controller = {
                     product_id: product.id,
                     cart_id: cartId
                 })
-                res.redirect("/products/detail/" + productId)
+                res.redirect("/")
             })
             
             /*carritos.forEach(carrito => {
@@ -225,7 +226,7 @@ var controller = {
                     }
         })
         .then(cart => {
-            console.log(cart.id);
+            console.log(cart.cart_id);
             if(cart){
                 var cartId = cart.cart_id
                 db.Cart_details.findAll({
@@ -234,7 +235,7 @@ var controller = {
     
                 })
                 .then(cartDetails => {
-                    console.log(cartDetails);
+                    //console.log(cartDetails);
                     res.render("productCart",{cartDetails})
                 })
             } else {
