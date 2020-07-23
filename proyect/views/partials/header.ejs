@@ -8,12 +8,12 @@
             <% if(typeof logueado != 'undefined'){ %>
               <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, <%= logueado.name %></button></a>
               
-              
+              <button class="btn-1"><form action="/users/logout" method="POST" style="font-size: 12px;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button></form>
 
             <% } else { %>
               <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Login</button></a>
 
-              <button class="btn-1"><form action="/users/logout" method="POST" style="font-size: 12px;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button></form>
+              
 
             <% } %>
         </div>
