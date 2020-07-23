@@ -6,10 +6,9 @@
       <div class="row align-items-center header">
         <div class="col-3 login desk">
             <% if(typeof logueado != 'undefined'){ %>
-              <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, <%= logueado[0].name %></button></a>
-            <% } else { %>
-              <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Login</button></a>
-            <% } %>
+              <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, </button></a>
+              <form action="/users/logout" method="POST"><button class="btn-1"></button></form>
+            <% } 
         </div>
         <div class="col-2 login mobile">
           <i class="fas fa-bars header"></i>
