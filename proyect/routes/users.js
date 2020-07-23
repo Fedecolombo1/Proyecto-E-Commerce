@@ -46,5 +46,7 @@ router.post('/register', upload.any(),[
 ], usersController.createUser);
 
 
+router.post('/logout',usersController.logout);
+
 
 module.exports = router;
