@@ -161,7 +161,7 @@ var controller = {
     cart: function(){
         console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         //recibimos el id del producto del form
-        var productId = req.params.id
+        var productId = req.body.productId
         console.log(productId);
         //tenemos de la session el id del usuario
         var userId = req.session.logueado.id
@@ -242,6 +242,9 @@ var controller = {
                 res.send("carrito vacio")
             }
         })
+    },
+    confirm: function(req, res, next){
+        res.render("confirm")
     }
 
 

@@ -4,6 +4,7 @@ var productsController = require("../controllers/productsController")
 const path = require('path');
 var multer = require('multer');
 const {check, validationResult, body} = require('express-validator');
+const usersMiddleware = require("../middlewares/usersMiddleware")
 
 
 var storage = multer.diskStorage({
@@ -40,8 +41,10 @@ router.post('/edit/:id', upload.any(), [
 
 router.post("/delete/:id", productsController.delete)
 
-router.post("/addToCart/:id", productsController.cart)
+router.post("/addToCart/:id",usersMiddleware.auth, productsController.cart)
 
-router.get('/cart', productsController.cartDetail);
+router.get('/cart',usersMiddleware.auth ,productsController.cartDetail);
+
+router.get("/confirm", productsController.confirm)
 
 module.exports = router;
