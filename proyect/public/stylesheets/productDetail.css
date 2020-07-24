@@ -101,6 +101,30 @@ div.row.talles {
 .test:hover{
     transform: scale(1.1);
 }
+.categoryMenu{
+    width: 200px;
+    color: rgb(223, 82, 0);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+    background-color: black;
+    font-family: 'Archivo Black', sans-serif;
+
+}
+.cantidadNumerico{
+    font-family: 'Archivo Black', sans-serif;
+    background-color: black;
+    width: 200px;
+    color: rgb(223, 82, 0);
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    text-align:center;
+
+}
 @media(min-width: 1024px){
     div.row.f {
         display: flex;
@@ -144,5 +168,29 @@ div.row.talles {
     }
     h6.desc {
         margin-top: 10px;
+    }
+    .categoryMenu{
+        width: 200px;
+        color: rgb(223, 82, 0);
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+        background-color: black;
+        font-family: 'Archivo Black', sans-serif;
+    
+    }
+    .cantidadNumerico{
+        font-family: 'Archivo Black', sans-serif;
+        background-color: black;
+        width: 200px;
+        color: rgb(223, 82, 0);
+        padding: 9px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        text-align:center;
+    
     }
 }
