@@ -102,9 +102,9 @@ div.row.talles {
     transform: scale(1.1);
 }
 .categoryMenu{
-    width: 76px;
+    width: 50%;
     padding: 8px 16px;
-    border-radius: 42px;
+    border-radius: 25px;
     border: 2px solid #EA2027;
     cursor: pointer;
     user-select: none;
@@ -115,26 +115,7 @@ div.row.talles {
     background-color: #EA2027;
     color: white;
 }
-.cantidadNumerico{
-    font-family: 'Archivo Black', sans-serif;
-    background-color: black;
-    width: 188px;
-    color: rgb(223, 82, 0);
-    padding: 9px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    text-align:center;
-    border-radius: 25%;
 
-}
-
-
-
-.cantidadNumerico:hover {
-    background-color: #EA2027;
-    color: white;
-}
 
 @media(min-width: 1024px){
     div.row.f {
@@ -181,9 +162,9 @@ div.row.talles {
         margin-top: 10px;
     }
     .categoryMenu{
-        width: 76px;
+        width: 50%;
         padding: 8px 16px;
-        border-radius: 42px;
+        border-radius: 25px;
         border: 2px solid #EA2027;
         cursor: pointer;
         user-select: none;
@@ -194,21 +175,5 @@ div.row.talles {
         background-color: #EA2027;
         color: white;
     }
-    .cantidadNumerico{
-        font-family: 'Archivo Black', sans-serif;
-        background-color: none;
-        width: 100%;
-        padding: 9px 16px;
-        border: 2px solid #EA2027;
-        cursor: pointer;
-        text-align:center;
-        border-radius: 42px;
     
-    }
-    
-    
-    .cantidadNumerico:hover {
-        background-color: #EA2027;
-        color: white;
-    }
 }

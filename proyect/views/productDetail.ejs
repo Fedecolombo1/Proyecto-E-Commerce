@@ -59,11 +59,11 @@
                 </h6>
                 <div class="col-12">
                   <div class="row botones">
-                    <h6 class="col-6 elegir">Elegir Talle y Cantidad</h6>
-                    <div class="col-12 talles">
+                    <h6 class="col-6 elegir">Elegir Talle Tú Talle</h6>
+                    <div class="col-12 talles" style="text-align:center;">
                     <form action="/products/addToCart/<%=product.id%>" method="POST">
                       <div class="row">
-                        <div class="col-6 textbox">
+                        <div class="col-12 textbox">
                           <i class="fas fa-tshirt"></i>
                           <select name="size" class="categoryMenu">
                               <option value="S" selected>S</option>
@@ -72,13 +72,13 @@
                               <option value="XL">XL</option>
                           </select>
                         </div>
-                        <div class="col-6">
-                          <input name="quantity" class="cantidadNumerico"type="number" value="1" min="1">
-                        </div>
+                        
                       </div>
                     </div>
                     
                       <input type="hidden" name="productId" value="<%=product.id%>">
+
+                      <br><br>
                       <button type="submit" class="col-12 a agregarCarrito"><i class="fas fa-shopping-cart"></i>  Agregar al carrito</button>
                     </form>
                     
