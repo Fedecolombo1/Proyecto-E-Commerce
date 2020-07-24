@@ -181,9 +181,9 @@ div.row.talles {
         margin-top: 10px;
     }
     .categoryMenu{
-        width: 178px;
+        width: 76px;
         padding: 8px 16px;
-        border-radius: 58%;
+        border-radius: 42px;
         border: 2px solid #EA2027;
         cursor: pointer;
         user-select: none;
@@ -196,15 +196,13 @@ div.row.talles {
     }
     .cantidadNumerico{
         font-family: 'Archivo Black', sans-serif;
-        background-color: black;
-        width: 188px;
-        color: rgb(223, 82, 0);
+        background-color: none;
+        width: 100%;
         padding: 9px 16px;
-        border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        border: 2px solid #EA2027;
         cursor: pointer;
         text-align:center;
-        border-radius: 25%;
+        border-radius: 42px;
     
     }
     
