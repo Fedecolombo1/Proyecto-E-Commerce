@@ -14,6 +14,12 @@ body{
 
 
 }
+.cantidad {
+  display: none
+}
+.border-0.align-middle.product-quantity {
+  display: none;
+}
 
 button.btn:hover {
     background-color: #EA2027;
@@ -24,6 +30,12 @@ button.btn:hover {
   .img {
     height: 20%;
     width: 20%;
+  }
+  .cantidad {
+    display: block
+  }
+  .border-0.align-middle.product-quantity {
+    display: block;
   }
 }
 
@@ -42,3 +54,8 @@ button.btn:hover {
 .subtitulo{
 color: rgb(223, 82, 0);
 }
+.fas.fa-trash {
+  font-size: 21px;
+  padding-bottom: 8px;
+}
+
