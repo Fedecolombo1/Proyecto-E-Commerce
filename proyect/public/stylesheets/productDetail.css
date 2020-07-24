@@ -102,29 +102,37 @@ div.row.talles {
     transform: scale(1.1);
 }
 .categoryMenu{
-    width: 200px;
-    color: rgb(223, 82, 0);
+    width: 178px;
     padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    border-radius: 58%;
+    border: 2px solid #EA2027;
     cursor: pointer;
     user-select: none;
-    background-color: black;
-    font-family: 'Archivo Black', sans-serif;
+    background-color: none;
+}
 
+.categoryMenu:hover {
+    background-color: #EA2027;
+    color: white;
 }
 .cantidadNumerico{
     font-family: 'Archivo Black', sans-serif;
-    background-color: black;
-    width: 200px;
-    color: rgb(223, 82, 0);
+    background-color: none;
+    width: 178px;
     padding: 9px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
+    border: 2px solid #EA2027;
     text-align:center;
+    border-radius: 58%;
 
 }
+
+
+.cantidadNumerico:hover {
+    background-color: #EA2027;
+    color: white;
+}
+
 @media(min-width: 1024px){
     div.row.f {
         display: flex;
@@ -170,27 +178,34 @@ div.row.talles {
         margin-top: 10px;
     }
     .categoryMenu{
-        width: 200px;
-        color: rgb(223, 82, 0);
+        width: 178px;
         padding: 8px 16px;
-        border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        border-radius: 58%;
+        border: 2px solid #EA2027;
         cursor: pointer;
         user-select: none;
-        background-color: black;
-        font-family: 'Archivo Black', sans-serif;
+        background-color: none;
+    }
     
+    .categoryMenu:hover {
+        background-color: #EA2027;
+        color: white;
     }
     .cantidadNumerico{
         font-family: 'Archivo Black', sans-serif;
-        background-color: black;
-        width: 200px;
-        color: rgb(223, 82, 0);
+        background-color: none;
+        width: 178px;
         padding: 9px 16px;
-        border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
         cursor: pointer;
+        border: 2px solid #EA2027;
         text-align:center;
+        border-radius: 58%;
     
+    }
+    
+    
+    .cantidadNumerico:hover {
+        background-color: #EA2027;
+        color: white;
     }
 }
