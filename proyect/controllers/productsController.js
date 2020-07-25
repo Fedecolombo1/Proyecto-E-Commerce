@@ -158,13 +158,13 @@ var controller = {
             res.render('productAdd', {errors:errors.errors, body})
         }
     },
-    cart: function(){
-        console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    cart: function(req, res, next){
+        console.log(req.body);
         //recibimos el id del producto del form
         var productId = req.body.productId
         console.log(productId);
         //tenemos de la session el id del usuario
-        var userId = req.session.logueado.id
+        var userId = req.session.logueado.user_id
         console.log(userId);
         //puede tener muchos carritos (muchos cerrados y uno abierto)
         //si no lo tiene lo creamos sino tomamos el id
@@ -175,7 +175,17 @@ var controller = {
         })
         .then(function(carrito){
             if(carrito){
-                var cartId = carrito.id
+                var cartId = carrito.cart_id
+                    db.Product.findByPk(productId)
+                    .then(product => {
+                        db.Cart_details.create({
+                            quantity: 1,
+                            price: product.price,
+                            product_id: product.id,
+                            cart_id: cartId
+                        })
+                        res.redirect("/products/cart")
+                    })
             } else {
                 db.Cart.create({
                     order_date: Date.now,
@@ -185,19 +195,19 @@ var controller = {
                     user_id: userId
                 })
                 .then(cart => {
-                    var cartId = cart.id
+                    var cartIdd = cart.cart_id
+                    db.Product.findByPk(productId)
+                    .then(product => {
+                        db.Cart_details.create({
+                            quantity: 1,
+                            price: product.price,
+                            product_id: product.id,
+                            cart_id: cartIdd
+                        })
+                        res.redirect("/products/cart")
+                    })
                 })
             }
-            db.Product.findByPk(productId)
-            .then(product => {
-                db.Cart_details.create({
-                    quantity: 1,
-                    price: product.price,
-                    product_id: product.id,
-                    cart_id: cartId
-                })
-                res.redirect("/")
-            })
             
             /*carritos.forEach(carrito => {
                 if(carrito.id == userId && carrito.order_status == "open"){
@@ -219,14 +229,13 @@ var controller = {
     },
     cartDetail: function(req, res, next) {
         //busco si hay algun carrito abierto
-        var userId = 2
+        var userId = req.session.logueado.user_id
         db.Cart.findOne({
             where:  {user_id: userId,
                      order_status: "open"
                     }
         })
         .then(cart => {
-            console.log(cart.cart_id);
             if(cart){
                 var cartId = cart.cart_id
                 db.Cart_details.findAll({
@@ -239,13 +248,43 @@ var controller = {
                     res.render("productCart",{cartDetails})
                 })
             } else {
-                res.send("carrito vacio")
+                res.render("carritoVacio")
             }
         })
     },
     confirm: function(req, res, next){
+        var userId = req.session.logueado.user_id
+        db.Cart.update({
+            order_status: "closed"
+        },{
+            where:  {user_id: userId,
+                order_status: "open"
+               }
+        }
+        )
+        .then(function(carrito){
+
+        })
         res.render("confirm")
+    },
+    removeProduct: function(req, res, next){
+        //tome el id del producto
+        var productId = req.params.id
+        //tome el id del carrito
+        var cartId = req.body.cartId
+        console.log(productId);
+        console.log(cartId);
+        db.Cart_details.destroy({
+            where: {
+                id: cartId
+            }
+        })
+        .then(function(){
+            res.redirect("/products/cart")
+        })
+
     }
+
 
 
 }

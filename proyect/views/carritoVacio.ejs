@@ -19,15 +19,16 @@
 
     
     
+    
     <div class="pb-1 pt-3">
-        
+        <div class="container">
           <div class="row">
+            
             <div class="col-lg-12 p-5 bg-white rounded shadow-regular mb-5">
     
-              <div style="margin-left: 2%;" class="pt-3">
-                <a href="/"><button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button></a>
-              </div>
-            
+                <div style="margin-left: 2%;margin-bottom: 20px;" class="pt-3">
+                    <a href="/"><button type="button" class="col-4 btn"><i class="fa fa-arrow-circle-left"></i>  Volver a productos</button></a>
+                  </div>
               <div class="table-responsive table-hover">
                 <table class="table">
 
@@ -47,59 +48,23 @@
                       </th>
                     </tr>
                   </thead>
-                  <% if(cartDetails.length != 0){ %>
-                    <% cartDetails.forEach(cartDetails => { %>
-                    <tbody>
-                    
-
-                      <tr>
-                        <th scope="row" class="border-0">
-                          <div class="p-2">
-                            <img class="img" src="<%= cartDetails.product.images[0].ruta %>" alt="" width="70" class="img-fluid rounded shadow-sm">
-                            <div class="ml-3 d-inline-block align-middle">
-                              <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= cartDetails.product.name %></a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">Sudadera negra talle M</span>
-                            </div>
-                          </div>
-                        </th>
-
-                        
-                        <td class="border-0  align-middle product-quantity">
-                          1
-                        </td>
-                        <td class="border-0 align-middle"><strong>$<%= cartDetails.product.price %></strong></td>
-                        <td class="border-0 align-middle">
-                          <form action="/products/removeProduct/<%= cartDetails.product.id %>" method="POST">
-                            <input type="hidden" name="cartId" value="<%=cartDetails.id %>">
-                            <button class="submit"><i class="fas fa-trash"></i></button>
-                          </form>
-                        </td>
-                      </tr>
-                      <% }) %>
-                    <% } else { %>
-                      <tr>
-                        <th scope="row" class="border-0">
-                          <div class="p-2">
-                            <div class="ml-3 d-inline-block align-middle">
-                              <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">No hay productos en el carrito</a></h5>
-                            </div>
-                          </div>
-                        </th>
-                    </tr>
-                    <% } %>
-
-                    
+                  
+                <tr>
+                    <th scope="row" class="border-0">
+                      <div class="p-2">
+                        <div class="ml-3 d-inline-block align-middle">
+                          <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">No hay productos en el carrito</a></h5>
+                        </div>
+                      </div>
+                    </th>
+                </tr>
                     
                     
                   <tr >
-                      <% var total = 0 %>
-                      <% for(var i = 0; i < cartDetails.length; i++){ 
-                        total = total + cartDetails[i].product.price
-                      } %>
-                      <td colspan="4" class="border-0 bg-light position-right ">Suma total: <b>$ <%= total %></b>
+                      <td colspan="4" class="border-0 bg-light position-right ">Suma total: <b>$ 0</b>
                       </td>
                   </tr>
                   
-
 
                   </tbody>
                   
@@ -120,7 +85,7 @@
             </div>
           </div>
     </div>
-         
+          
 
           <%- include('partials/footer.ejs') %> 
 </body>
