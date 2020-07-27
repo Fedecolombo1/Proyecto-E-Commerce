@@ -153,7 +153,8 @@ var controller = {
 
         if(errors.isEmpty()){
             db.Product.create(req.body)
-            res.redirect('/home')
+            
+            res.redirect('/')
         } else {
             res.render('productAdd', {errors:errors.errors, body})
         }
@@ -166,6 +167,9 @@ var controller = {
         //tenemos de la session el id del usuario
         var userId = req.session.logueado.user_id
         console.log(userId);
+        //tomamos el talle
+        var talle = req.body.size
+        console.log(talle);
         //puede tener muchos carritos (muchos cerrados y uno abierto)
         //si no lo tiene lo creamos sino tomamos el id
         db.Cart.findOne({
@@ -180,6 +184,7 @@ var controller = {
                     .then(product => {
                         db.Cart_details.create({
                             quantity: 1,
+                            size: talle,
                             price: product.price,
                             product_id: product.id,
                             cart_id: cartId
@@ -202,7 +207,8 @@ var controller = {
                             quantity: 1,
                             price: product.price,
                             product_id: product.id,
-                            cart_id: cartIdd
+                            cart_id: cartIdd,
+                            size: talle
                         })
                         res.redirect("/products/cart")
                     })

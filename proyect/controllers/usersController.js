@@ -48,23 +48,19 @@ var controller = {
         }
         var errors = validationResult(req);
         var usersLogin = '';
-        db.User.findAll()
-        .then(function(users){
-            for(var i=0; i= users.length; i++){
-                if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)){
-                    usersLogin = users[i];
-                    break;
+        db.User.findOne({
+            where: {
+                email: req.body.email,
             }
-            if(usersLogin == undefined){
-            return res.render('login', {errors: [
-                {msg: 'Se produjo un error al iniciar sesión. Verifique el correo electrónico o la contraseña.'}
-            ]});
-        };
-
-        res.redirect('/')
-        }
         })
-    },
+        .then(function(user){
+            if(bcrypt.compareSync(req.body.password, user.password)){
+                res.redirect('/')
+            } else {
+                return res.render('login', {errors});
+            }
+        }
+    )},
 // por ahora no existe el log-out botton (es para el futuro)
 
     logout: function(req, res, next){
@@ -122,8 +118,7 @@ users = JSON.stringify(users);
             db.User.create(userNew)
             .then(function(userLog){
                 console.log(userLog);
-                req.session.logueado = userLog[0]
-                res.redirect('/')
+                res.redirect('/users/login')
             })
         } else {
             res.render('register', {errors: errors.errors, body})

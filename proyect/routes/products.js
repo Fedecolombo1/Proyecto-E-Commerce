@@ -29,7 +29,6 @@ router.get('/add', productsController.productAdd);
 router.post('/add',upload.any(),[
   check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
   check("price").isLength({min: 1}).withMessage("Completa el precio"),
-  check("category").isEmpty().withMessage("Completa la categoria")
   ] , productsController.productCreate)
 
 router.get('/edit/:id', productsController.edit)

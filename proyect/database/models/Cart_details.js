@@ -7,6 +7,7 @@ module.exports = (sequelize, dataType) => {
         price: dataType.INTEGER,
         product_id: dataType.INTEGER,
         cart_id: dataType.INTEGER,
+        size: dataType.STRING
     }
 
     config = {

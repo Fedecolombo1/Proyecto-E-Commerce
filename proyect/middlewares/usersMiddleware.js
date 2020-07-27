@@ -22,9 +22,9 @@ var middleware = {
                     console.log(user);
                     req.session.logueado = user
                     //console.log(userFound);
-                
+                    userFound = user
                     if(req.body.recuerdame != undefined){
-                    res.cookie('recuerdame', userFound[0].email, {maxAge: 36000000})
+                    res.cookie('recuerdame', userFound.email, {maxAge: 36000000})
                     }
                     next()
                 }
@@ -68,20 +68,20 @@ var middleware = {
     },
     recuerdame: function(req, res, next){
         console.log(req.cookie.recuerdame);
-        
-        var users = JSON.parse(fs.readFileSync("./database/users.json", {encoding: 'utf-8'}))
-        if(req.cookie.recuerdame != undefined && req.session.logueado == undefined){
-            for(var i=0; i= users.length; i++){
-                if(users[i].email == req.cookie.recuerdame){
-                    userLog = users[i]
-                    break;
-                    
+        if(req.cookie.recuerdame){
+            db.User.findOne({
+                where: {
+                    email: req.cookie.recuerdame.email
                 }
-            }
-            req.session.logueado = userLog
+            })
+            .then(function(user){
+                if(user){
+                    req.session.logueado = user
+                }
+            })
+            next()
         }
-
-
+        next()
  }
 }
 module.exports = middleware

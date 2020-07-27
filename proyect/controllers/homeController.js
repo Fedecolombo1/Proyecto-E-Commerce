@@ -50,7 +50,7 @@ var controller = {
       .then(function(products){    
           db.Category.findByPk(req.params.category_id)
           .then(function(categoria){
-            var imageSrc = ''
+          var imageSrc = ''
           var imageSrc1 = ''
           var imageSrc2 = ''
           if(req.params.category_id == '2'){

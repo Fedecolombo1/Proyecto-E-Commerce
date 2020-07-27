@@ -27,25 +27,29 @@
           <a class="title" href="/"><h3 class="t">FRESH</h3></a>
       </div>
 
-        <div class="row col-1 col-lg-3 buscadorMobile">
+        <div class="row col-1 col-lg-3 buscadorMobile" style="text-align: right;">
             
+          <% if(typeof logueado != 'undefined'){ %>
+            <a style="text-align: center;display: inline-block; margin-right: 10px;color: white;" href="/products/Add"> Agregar productos</a>
+          <% } %>
+
             <a href="/products/cart"> 
             
               
-                <i class="fas fa-shopping-cart carrito desk header">
-                <span class= "quantityTest"> 0 </span>
+                <i class="fas fa-shopping-cart carrito desk header" style="display: inline-block;">
+                <span class= "quantityTest"> + </span>
 
                 </i> 
               
             </a>
             
+            
         </div>    
 
         <div class="col-3 col-lg-3 buscador mobile" style="text-align: right;">
-
           <a href="/products/cart">
             <i class="fas fa-shopping-cart mobile header">
-              <span class= "quantityTest"> 0</span>
+              <span class= "quantityTest"> +</span>
             </i>
           </a>
         </div>
