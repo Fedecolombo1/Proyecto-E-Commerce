@@ -41,7 +41,9 @@ router.post('/edit/:id', upload.any(), [
 
 router.post("/delete/:id", productsController.delete)
 
-router.post("/addToCart/:id",usersMiddleware.auth, productsController.cart)
+router.post("/addToCart/:id",usersMiddleware.auth, productsController.cart);
+
+router.post("/removeProduct/:id", productsController.removeProduct);
 
 router.get('/cart',usersMiddleware.auth ,productsController.cartDetail);
 
