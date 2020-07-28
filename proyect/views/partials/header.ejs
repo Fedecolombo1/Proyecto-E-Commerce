@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='/stylesheets/header.css' />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header>
     <div class="container-fluid">
       <div class="row align-items-center header">
@@ -21,18 +21,25 @@
         
         <div class="col-3 login mobile">
           <div class="topnav">
-            <a href="#home" class="active"></a>
+            <a href="#home" class="active" style="margin-top: 12px;"></a>
             <div id="myLinks">
               <br>
               <br>
-              <a href="/users/login" style="border-bottom: 1px solid rgb(231, 85, 0); border-top:  1px solid rgb(231, 85, 0);"> Log-in</a>
-              <a href="/1" style="border-bottom: 1px solid rgb(231, 85, 0);">96</a>
-              <a href="/2"style="border-bottom: 1px solid rgb(231, 85, 0);">ESSENCE</a>
-              <a href="/3" style="border-bottom: 1px solid rgb(231, 85, 0);">BASIC</a>
-              <a href="https://www.instagram.com/fresharg/"  style="border-bottom: 1px solid rgb(231, 85, 0);">Instagram</a>
+              <% if(typeof logueado != 'undefined'){ %>
+              <a href="/users/login" style="border-bottom: 1px solid rgb(231, 85, 0); border-top:  1px solid rgb(231, 85, 0);"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, <%= logueado.name %></a>
+              <form action="/users/logout" method="POST" style="font-size: 12px; display: inline;">
+                <button class="btn-1"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+              </form>
+              <% } else { %>
+                <a href="/users/login" style="border-bottom: 1px solid rgb(231, 85, 0); border-top:  1px solid rgb(231, 85, 0);"><i class="fa fa-user-circle" aria-hidden="true"></i> Login</a>
+              <% } %>
+              <a href="/1" style="border-bottom: 1px solid rgb(231, 85, 0);">"96"</a>
+              <a href="/2"style="border-bottom: 1px solid rgb(231, 85, 0);">"ESSENCE"</a>
+              <a href="/3" style="border-bottom: 1px solid rgb(231, 85, 0);">"BASIC"</a>
+              <a href="https://www.instagram.com/fresharg/"  style="border-bottom: 4px solid rgb(231, 85, 0);">Instagram</a>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fas fa-bars"></i>
+              <i class="fas fa-bars" style="padding-top: 11px;"></i>
             </a>
           </div>
         </div>

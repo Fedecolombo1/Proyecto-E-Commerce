@@ -150,10 +150,19 @@ var controller = {
     productCreate: function(req, res, next){
         var errors = validationResult(req)
         var body = req.body
-
+        console.log(req.files[0].filename);
         if(errors.isEmpty()){
             db.Product.create(req.body)
-            
+            .then(function(product){
+                db.Images_product.create({
+                    ruta: "/images/products/" + req.files[0].filename,
+                    product_id: product.id
+                })
+                db.Images_product.create({
+                    ruta: "/images/products/" + req.files[1].filename,
+                    product_id: product.id
+                })
+            })
             res.redirect('/')
         } else {
             res.render('productAdd', {errors:errors.errors, body})

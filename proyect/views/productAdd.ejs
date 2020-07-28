@@ -66,16 +66,16 @@
         
             <div class="textbox">
                 <i class="fas fa-image"></i>
-                <label for="imagen">Imagen del Producto:</label>
-                <input type="file" id="imagen" name="img" accept="image/png, image/jpeg"/>
+                <label for="imagen">Imagen del Producto:</label>     
             </div>
-    
+            <input type="file" id="imagen" name="img" accept="image/png, image/jpeg"/>
+
             <div class="textbox">
                 <i class="fas fa-image"></i>
                 <label for="imagen">Imagen del Atras:</label>
-                <input type="file" id="imagen" name="imgBack" accept="image/png, image/jpeg"/>
             </div>
-
+            <input type="file" id="imagen" name="imgBack" accept="image/png, image/jpeg"/>
+            
             <% if(typeof errors != 'undefined') { %>
                 <ul style="padding-left: 10px;">
                     <% for(let i = 0; i < errors.length; i++){ %>

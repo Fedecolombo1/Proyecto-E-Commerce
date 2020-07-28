@@ -7,15 +7,7 @@ function myFunction() {
   var topNav = document.querySelector("div.topnav");
   if (navbrrr.style.display === "block") {
     navbrrr.style.display = "none";
-    topNav.classList.remove("col-12");
-    
-    div.classList.add("col-3");
   } else {
-    div.classList.remove("col-3");
-    div.classList.add("col-12");
-    topNav.classList.add("col-12");
     navbrrr.style.display = "block";
-    titulo.style.toggle.display ="none";
-    carrito.style.display ="none";
   }
 }
