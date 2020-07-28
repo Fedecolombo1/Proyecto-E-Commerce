@@ -160,6 +160,50 @@ div.row.col-4.col-lg-1.buscadorMobile {
     
 }
 
+
+
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    position: absolute;
+    z-index: 4;
+    margin-left: -16px;
+    margin-top: -25px;
+
+  }
+  
+  .topnav #myLinks {
+    display: none;
+    
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+  }
+  
+  .topnav a:hover {
+    color: rgb(231, 85, 0);
+  }
+
+  .active {
+    
+    color: white;
+  }
+
+
 @media(min-width: 1024px){
     .fa-bars {
         display: none;
@@ -224,12 +268,6 @@ div.row.col-4.col-lg-1.buscadorMobile {
     padding: 0px;
     }
     
-    .nav {
-        margin-bottom: 20px;
-        border: 1px solid #ced6e0;
-        border-left: 0px;
-        border-right: 0px;
-    }
     a.sec {
         display: flex;
         justify-content: center;
@@ -277,6 +315,14 @@ div.row.col-4.col-lg-1.buscadorMobile {
         text-align: end;
         margin-right: 19px;
     }
+
+}
+@media (max-width: 1024px) {
+    .topnav #myLinks {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
 }
 
     

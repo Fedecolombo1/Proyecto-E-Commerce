@@ -4,6 +4,7 @@
 <header>
     <div class="container-fluid">
       <div class="row align-items-center header">
+        
         <div class="col-3 login desk">
             <% if(typeof logueado != 'undefined'){ %>
               <a href="/users/login"><button class="btn-1"><i class="fa fa-user-circle" aria-hidden="true"></i> Hola, <%= logueado.name %></button></a>
@@ -17,9 +18,25 @@
 
             <% } %>
         </div>
-        <div class="col-2 login mobile">
-          <i class="fas fa-bars header"></i>
+        
+        <div class="col-3 login mobile">
+          <div class="topnav">
+            <a href="#home" class="active"></a>
+            <div id="myLinks">
+              <br>
+              <br>
+              <a href="/users/login" style="border-bottom: 1px solid rgb(231, 85, 0); border-top:  1px solid rgb(231, 85, 0);"> Log-in</a>
+              <a href="/1" style="border-bottom: 1px solid rgb(231, 85, 0);">96</a>
+              <a href="/2"style="border-bottom: 1px solid rgb(231, 85, 0);">ESSENCE</a>
+              <a href="/3" style="border-bottom: 1px solid rgb(231, 85, 0);">BASIC</a>
+              <a href="https://www.instagram.com/fresharg/"  style="border-bottom: 1px solid rgb(231, 85, 0);">Instagram</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
         </div>
+        
         <div class="col-7 t mobile">
             <a class="title" href="/"><h3 class="t">FRESH</h3></a>
         </div>
@@ -27,7 +44,7 @@
           <a class="title" href="/"><h3 class="t">FRESH</h3></a>
       </div>
 
-        <div class="row col-1 col-lg-3 buscadorMobile" style="text-align: right;">
+      <div class="row col-1 col-lg-3 buscadorMobile" style="text-align: right;">
             
           <% if(typeof logueado != 'undefined'){ %>
             <a style="text-align: center;display: inline-block; margin-right: 10px;color: white;" href="/products/Add"> Agregar productos</a>
@@ -46,14 +63,31 @@
             
         </div>    
 
-        <div class="col-3 col-lg-3 buscador mobile" style="text-align: right;">
+        <div class="col-2 col-lg-2 buscador mobile" style="text-align: right;">
           <a href="/products/cart">
             <i class="fas fa-shopping-cart mobile header">
               <span class= "quantityTest"> +</span>
             </i>
           </a>
         </div>
+
+<!--
+        <div class="nav" id="nav">
+          <label for="toggle">&#9776;</label>
+          <input type="checkbox" id="toggle"/>
+          <div class="menu">
+            <a href="/">Home</a>
+            <a href="">96</a>
+            <a href="">ESSENCE</a>
+            <a href="">BASIC</a>
+            <a href="https://www.instagram.com/fresharg/">Instagram</a>
+          
+          </div>
+        </div>
+-->
+
       </div>
     </div>
     <script src="/js/carritoJs.js"></script>
+    <script src="/js/nav.js"></script>
   </header>
