@@ -103,7 +103,7 @@ div.row.talles {
     transform: scale(1.1);
 }
 .categoryMenu{
-    width: 50%;
+    width: 75%;
     padding: 8px 16px;
     border-radius: 25px;
     border: 2px solid #EA2027;
@@ -175,6 +175,9 @@ div.row.talles {
     .categoryMenu:hover {
         background-color: #EA2027;
         color: white;
+    }
+    .categoryMenu{
+        width: 100px;
     }
     
 }
