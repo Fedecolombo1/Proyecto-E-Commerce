@@ -24,21 +24,21 @@ var upload = multer({storage: storage});
 
 router.get('/detail/:id', productsController.productDetail);
 
-router.get('/add', productsController.productAdd);
+router.get('/add', usersMiddleware.admin, productsController.productAdd);
 
 router.post('/add',upload.any(),[
   check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
   check("price").isLength({min: 1}).withMessage("Completa el precio"),
   ] , productsController.productCreate)
 
-router.get('/edit/:id', productsController.edit)
+router.get('/edit/:id',usersMiddleware.admin, productsController.edit)
 
 router.post('/edit/:id', upload.any(), [
   check('name').isLength({min: 1}).withMessage('Completa el nombre'), 
   check("price").isLength({min: 1}).withMessage("Completa el precio")
 ] ,productsController.update)
 
-router.post("/delete/:id", productsController.delete)
+router.post("/delete/:id",usersMiddleware.admin, productsController.delete)
 
 router.post("/addToCart/:id",usersMiddleware.auth, productsController.cart);
 

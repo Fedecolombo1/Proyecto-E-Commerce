@@ -54,9 +54,18 @@
                  
                     <div class="errores">
                         <ul>
-                    
+                            
                         </ul>
                     </div>
+
+                    
+                    <% if(typeof error != 'undefined'){ %>
+                        <div class="errores">
+                            <ul>
+                                <li>El email o la contraseña no coinciden<i class="fas fa-exclamation"></i></li>
+                            </ul>
+                        </div>
+                    <% } %>
 
                     <% if(typeof errors != 'undefined') { %>
                         <ul style="padding-left: 10px;">

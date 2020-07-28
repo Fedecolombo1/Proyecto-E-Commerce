@@ -17,7 +17,6 @@ var middleware = {
         .then(function(user){
             //comparar si encontro
             if(user){
-                
                 if(bcrypt.compareSync(req.body.password, user.password) == true){
                     console.log(user);
                     req.session.logueado = user
@@ -27,13 +26,16 @@ var middleware = {
                     res.cookie('recuerdame', userFound.email, {maxAge: 36000000})
                     }
                     next()
-                }
-                
+                } else {
+                //si no encontro
+                    userFound = ""
+                    error = "El email o la contraseña no coinciden"
+                    res.render('login', {errors:errors.errors, error})
+                } 
             } else {
-            //si no encontro
-                userFound = ""
+                //si no encontro
                 res.render('login', {errors:errors.errors})
-            }          
+            }         
         })
         
 
@@ -59,11 +61,12 @@ var middleware = {
             res.redirect('/')
         }
     },
-    admin: function(){
-        if(req.session.user.name == "Isa"){
+    admin: function(req,res,next){
+        console.log(req.session.logueado);
+        if(req.session.logueado.user_id == 2 || req.session.logueado.user_id == 27){
             next();
         }else{
-            res.redirect("/");
+            res.render("sinPermisos");
         }
     },
     recuerdame: function(req, res, next){
