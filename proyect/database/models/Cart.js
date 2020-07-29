@@ -9,7 +9,7 @@ module.exports = (sequelize, dataType) => {
             autoIncrement:true,
             field: "id"
             },
-        order_date: dataType.DATE,
+
         order_address: dataType.STRING,
         order_status: dataType.STRING,
         total: dataType.INTEGER,
