@@ -58,4 +58,11 @@ color: rgb(223, 82, 0);
   font-size: 21px;
   padding-bottom: 8px;
 }
-
+a.pagar {
+  text-decoration: none;
+  color: black;
+}
+a.pagar:hover {
+  text-decoration: none;
+  color: white;
+}
