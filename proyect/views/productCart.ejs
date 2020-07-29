@@ -42,7 +42,7 @@
                       <th scope="col" class="border-0 bg-light">
                         <div class="py-2 text-uppercase">Precio</div>
                       </th>
-                      <th scope="col" class="border-0 bg-light">
+                      <th style="padding-bottom:20px;" scope="col" class="border-0 bg-light">
                         Eliminar
                       </th>
                     </tr>
@@ -57,20 +57,21 @@
                           <div class="p-2">
                             <img class="img" src="<%= cartDetails.product.images[0].ruta %>" alt="" width="70" class="img-fluid rounded shadow-sm">
                             <div class="ml-3 d-inline-block align-middle">
-                              <h5 class="mb-0"> <a href="/products/detail/<%=cartDetails.product.id%>" class="text-dark d-inline-block align-middle"><%= cartDetails.product.name %></a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">talle <%= cartDetails.size%></span>
+                              <h5 class="mb-0"> <a href="/products/detail/<%=cartDetails.product.id%>" class="text-dark d-inline-block align-middle"><%= cartDetails.product.name %></a></h5><span style="color: rgb(223, 82, 0);" class="font-weight-normal font-italic d-block ">TALLE <%= cartDetails.size%></span>
                             </div>
                           </div>
                         </th>
 
                         
-                        <td class="border-0  align-middle product-quantity">
-                          1
+                        <td class="border-0 align-middle" style="text-align: center;">
+                         <strong>1</strong>
                         </td>
                         <td class="border-0 align-middle"><strong>$<%= cartDetails.product.price %></strong></td>
                         <td class="border-0 align-middle">
                           <form action="/products/removeProduct/<%= cartDetails.product.id %>" method="POST">
                             <input type="hidden" name="cartId" value="<%=cartDetails.id %>">
-                            <button class="submit"><i class="fas fa-trash"></i></button>
+                            <button class="submit"><i style="padding-bottom: 0px;"
+                           class="fas fa-trash"></i></button>
                           </form>
                         </td>
                       </tr>
@@ -108,7 +109,7 @@
                 </table>
               </div>
               <div class="buttonfix row justify-content-end" style="width: 100%;">
-                <button type="button" class="col-4 btn"><a href="/products/confirm">Pagar  <i class="fa fa-arrow-circle-right"></i></a></button>
+                <button type="button" class="col-4 btn"><a class="pagar" href="/products/confirm">Pagar  <i class="fa fa-arrow-circle-right"></i></a></button>
               </div>
             </div>
               
